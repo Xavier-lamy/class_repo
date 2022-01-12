@@ -1,0 +1,18 @@
+# Extensions utiles:
+- code runner: run c c++ java js php
+- color picker
+- git history
+- gitHub Markdown Preview, intègre:
+    - Markdown Checkbox
+    - Markdown Emoji
+    - Markdown Preview Github Styling
+    - Markdown yaml Preamble
+- git lens
+- js & css minify
+- Laravel Blade Snippets
+- php Debug (nécessite Php XDebug)
+- live sass compiler
+- live server
+- open in browser
+- php cs fixer
+- Php Intelephense
