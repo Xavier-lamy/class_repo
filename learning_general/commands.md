@@ -12,6 +12,7 @@ Pour windows:
 - ``tab`` pour l'auto-complétion
 - ``ctrl+r`` pour faire une recherche dans l'historique de commandes
 - ``ctrl+a`` et ``ctrl+e`` pour aller automatiquement au début ou à la fin de la ligne de commande si elle est longue
+- ``ctrl+c`` pour stopper l'exécution du terminal
 
 ## A propos des commandes:
 - Les commandes peuvent avoir des options ou des paramètres en plus (introduits par ``--`` ou ``-``)

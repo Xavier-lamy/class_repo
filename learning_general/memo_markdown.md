@@ -105,6 +105,13 @@ Du `code` dans du texte.
 
 [Lien](https://example.com/ "titre de lien optionnel")
 
+#### Lien avec ancre
+- [Lien vers le titre "Exemple de diagramme" du fichier Mermaid](memo_mermaid.md/#exemples-de-diagrammes)
+- [Lien vers un titre de ce fichier](#code) 
+- Attention: 
+    - Fonctionne mal avec les caractères spéciaux
+    - ne fonctionne pas avec tous les plugins de rendu markdown
+
 #### Lien explicite
 
 <https://example.com>

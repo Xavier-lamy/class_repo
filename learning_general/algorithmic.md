@@ -84,8 +84,12 @@ Les différents types de données définis et utilisés dans un programme sont a
 	- **graphe**: il s'agit d'un réseau dont les données ("sommet") sont reliés par une relation ("arc") un sommet peut etre relié à beaucoup d'autres par des arcs
 
 
-### Algorithmes de tri
+### Algorithmes de recherche
+#### Recherche dichotomique
+- En anglais binary search
+- Dans un tableau trié, pour trouver la position d'un élément ``n``, on compare cet élément avec l'élément ``c`` du milieu du tableau, si n > c on cherche dans la deuxième moitié du tableau et on recommence l'opération jusqu'à ce que ``n = c`` (si ``n < c``, on cherche dans la première moitié) 
 
+### Algorithmes de tri
 #### Le tri à bulle: 
 l'algorithme tri les infos 2 par deux il choisi la plus grande (ou autre critère de sélection), puis la rapproche de la fin de la liste en les inversant , cette dernière est ensuite comparée a la doonée suivante et la plus grande des deux se rapproche alors de la fin de la liste, quand elle arrive en fin de liste on sait que la plus grande est à la fin, il reste alors à recommencer pour tous les autres valeurs pour déterminer la 2eme plus grande, la 3eme...
 
