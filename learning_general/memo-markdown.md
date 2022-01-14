@@ -106,10 +106,10 @@ Du `code` dans du texte.
 [Lien](https://example.com/ "titre de lien optionnel")
 
 #### Lien avec ancre
-- [Lien vers le titre "Exemple de diagramme" du fichier Mermaid](memo_mermaid.md/#exemples-de-diagrammes)
+- [Lien vers le titre "Exemple de diagramme" du fichier Mermaid](memo-mermaid.md/#exemples-de-diagrammes)
 - [Lien vers un titre de ce fichier](#code) 
 - Attention: 
-    - Fonctionne mal avec les caractères spéciaux
+    - Fonctionne mal avec les caractères spéciaux (car le slug n'est pas correct)
     - ne fonctionne pas avec tous les plugins de rendu markdown
 
 #### Lien explicite
@@ -191,4 +191,4 @@ Au choix:
 _ _ _
 
 ## Mermaid (diagrammes pour markdown)
-Permet de faire des diagrammes dans un fichier Markdown-->[Voir memo Mermaid](memo_mermaid.md)
+Permet de faire des diagrammes dans un fichier Markdown-->[Voir memo Mermaid](memo-mermaid.md)

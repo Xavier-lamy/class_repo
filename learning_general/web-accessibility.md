@@ -97,3 +97,7 @@ Globalement les mêmes que pour un site classique, il s'agit avant tout d'élém
 - certifications Access 42, Opquast et Accessiweb
 - évènement annuel ParisWeb (conférences)
 - labels Accessiweb, E-accessible, AnySurfer et Euracert attribuables aux sites et administrations ayant entrepris une démarche de mise en conformité aux standards d'accessibilité
+
+## Taux de conformité au RGAA
+- Audit réalisé sur un échantillon de pages du site, il consiste à vérifier que le site passe les 106 critères du référentiel RGAA
+- Les sites concernés par l'obligation d'accessibilité numérique doivent publier une déclaration d'accessibilité, on peut notamment afficher le taux de conformité au RGAA en bas de page
