@@ -166,6 +166,8 @@ git push -u origin main
 - ``git mv oldname newname``: renomme le fichier
 
 ### Consulter l'historique
+Si on a besoin de revenir à une ancienne version, on peut utiliser la **journalisation** (log file), chaque commit possède un identifiant *SHA (secure hash algorithm)* de longues chaines de caractères qui dans ce cas servent à identifier les commits
+
 - ``git log``: historique des versions pour la branche actuelle
 
 - ``git log --follow fileName``: historique des versions (dont les renommages) pour ce fichier
@@ -176,11 +178,16 @@ git push -u origin main
 
 - ``git log --author=name``: que les commit d'un auteur particulier  
 
-- ``git reflog``:
-
+- ``git reflog``: permet de voir toutes les actions et commits effectués, c'est à dire qu'en plus des commits , il peut nous afficher les merges, changement de messages,...
+	- Ainsi si on veut revenir à une action donné: ``git checkout e789e7c [code SHA]``
+ 
 - ``git diff branchA branchB``: montre les différences de contenu entre les deux branches
 
 - ``git show commitName``: montre les modifications de métadonnées et de contenu de ce commit
+
+- ``git blame``: permet d'afficher pour chaque ligne modifié d'un doc commité: son ID, son auteur, l'horodatage, le numéro de ligne et le contenu de la ligne
+
+- ``git cherry-pick`` : si on souhaite uniquement sélectionner certains commmit d'une branche pour les migrer vers main sans fusionner les deux branches, on utilise cherry-pick puis les SHA des commits voulus, il est génralemtn peu recommandé d el'utiliser car cela duplique des commits existants
 
 ### Corrections d'erreurs et annulations de commit
 - ``git restore filename``: restaurer un fichier à son dernier état sauvegardé
@@ -190,7 +197,15 @@ modifications localement
 
 - ``git reset --hard commitName``: supprime tout l'historique et les modifications effectuées après ce commit 
 
+- ``git reset --mixed HEAD~``: permet de revenir en arrière juste après le dernier commit ou le commit spécifié mais sans supprimer les modifs en cours, si les fichiers sont indexés mais pas commités cela les désindex, HEAD est le pointeur qui référence notre position actuelle dans le répertoire de travail
+
+- ``git reset --soft`` : permet de se placer sur un commit spécifique pour voir le code d'une ancienne version, ou créer une branche qui part d'un ancien commit, sans suppprimer le moindre fichier ou commit
+
+- ``git revert HEAD^`` (au lieu de ``git reset``), cela sert à annuler les changements sur une branche publique,
 ![Image fonctionnement de git reset](git_reset.png)
+
+### Résolutions de conflits
+Si on merge deux fichiers et qu'une même ligne a été changée de plusieurs façons, cela peut créer des conflits, il faudra alors ouvrir le fichier et à l'endroit du conflit supprimer les éléments inutiles, puis redire à git de "add" et "commit"
 
 ### Remises
 Elles permettent de mettre en attente des modifs non finies et d'y revenir après -->[Voir Git stash](git_stash.md)
@@ -230,3 +245,14 @@ Elles permettent de mettre en attente des modifs non finies et d'y revenir aprè
         - ``git flow init``
         - ``flow init -f`` = forcer
         - ``flow init -d``
+
+### Clés SSH
+Si notre accès à distance ne fonctionne pas, cela peut être du à un problème d'authentification du réseau, on peut le régler en créant une paire de clés SSH:
+- Secure Shell: il s'agit d'un duo composé d'une clé privé et d'une clé publique, comme pour un [chiffrement asymétrique](../learning_general/asymmetric-cryptography.md), sauf qu'on utilise le chiffrement assymétrique que pour envoyer une clé symétrique chiffré entre le serveur et le client, puis seul cette nouvelle clé symétrique est utilisée pour communiquer, les deux l'ayant reçu de manière asymétrique, elle est safe)
+
+- Pour créer un duo de clés ssh:
+	- ``ssh-keygen -t rsa -b 4096 -C "exemple@email.com"``
+	- On peut ensuite indiquer un nom de fichier, valider avec entrée, puis entrer un mot de passe et sa confirmation
+	- puis on va dans ``users/username`` et on affiche les dossiers masqués, il y'aura un dossier ssh, on y trouve la clé publique (id_rsa.pub) et la privée (id_rsa.txt)
+	- on copie la clé publique (en l'ouvrant dans un éditeur puis en copiant), ensuite on va sur github, sur notre avatar, dans ``settings``
+	- puis sur ``ssh/gpg``, on clique sur ``new ssh key``, on choisit le titre et on colle la clé publique dans ``key``, on confirme le mot de passe et cela ajoute la nouvelle clé ssh au compte github
