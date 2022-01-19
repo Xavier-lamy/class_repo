@@ -227,11 +227,12 @@ chaleur, lumière, joie, logique, humour; négatif: traitrise, mensonge, tromper
 Attention à:
 - la qualité des images, à leur lisibilité
 - leur provenance (libre de droit ou achetées)
-
+- Site de recherches d'images
 - banques d'images gratuites :
     - Pixabay
     - Pexels
     - PicJumbo
+    - [Unsplash](https://unsplash.com/)
 - banques d'images payantes :
     - Fotolia
     - ShutterStock
