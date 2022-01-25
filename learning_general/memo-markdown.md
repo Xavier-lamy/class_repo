@@ -190,5 +190,10 @@ Au choix:
 
 _ _ _
 
+## Discord
+Discord supporte aussi une partie du markdown (notamment les blocs de code)
+Et ajoute aussi:
+- ||Spoiler|| : les éléments entre || seront cachés par une balise spoiler
+
 ## Mermaid (diagrammes pour markdown)
 Permet de faire des diagrammes dans un fichier Markdown-->[Voir memo Mermaid](memo-mermaid.md)
