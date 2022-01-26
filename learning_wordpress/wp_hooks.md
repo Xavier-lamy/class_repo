@@ -152,3 +152,6 @@ add_action( 'save_post', 'prefix_table_of_contents', 10, 3 );
     scroll-margin-top: 40px; /* pour laisser une légère marge au dessus quand le scroll est terminé*/
     }
     ```
+
+### Hookr.io
+Il s'agit d'un site qui recense tous les hooks et fonctions wordpress, où elles sont déclarées et ce qu'elles contiennent
