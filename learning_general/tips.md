@@ -82,3 +82,6 @@ une partie importante de toute présentation, cela consiste a reprendre la struc
 - sur virtual manager:
     - créer un volume
     - lui attribuer une quantité de ram et une capacité de stockage
+
+### Stimulus
+Un framework JS, on écrit des controleurs qui peuvent permettre de réagir à des changements dans le dom (par exemple si un élément a été intégré à la page avec une requete AJAX la page n'est pas forcément rechargé, et donc cet élément peut ne pas etre disponible pour être manipulé en js; un contrôleur créé avec stimulus pourrait régler ce problème)
