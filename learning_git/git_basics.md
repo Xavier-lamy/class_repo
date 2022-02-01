@@ -105,7 +105,7 @@ git push -u origin main
 
 - ``git commit -m "Write commit comment"``: commit, -m pour commenter
 
-- ``git commit -m --ammend "oups forgot this one"``: remplace le commit précédent
+- ``git commit -m "oups forgot this one" --amend``: remplace le commit précédent
 
 - ``git push distant-name branchName``: push
 
