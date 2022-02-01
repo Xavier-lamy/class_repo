@@ -197,3 +197,11 @@ Et ajoute aussi:
 
 ## Mermaid (diagrammes pour markdown)
 Permet de faire des diagrammes dans un fichier Markdown-->[Voir memo Mermaid](memo-mermaid.md)
+
+
+## Présentations en Markdown avec Marp
+Configurer du style dans une balise metadata markdown
+--- règles horizontales
+outil: Marp
+Permet de faire des mises en page avancés genre powerpoint
+permet aussi de transformer en pdf 
