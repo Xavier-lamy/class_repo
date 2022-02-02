@@ -15,6 +15,8 @@ Il existe aussi d'autre Post Types:
 - On peut bien sûr ajouter notre nouveau CPT  au menu, comme pour n'importe quelle publication
 - les CPT sont rangés dans la colonne **post_type** de la table **wp_posts** dans la BDD
 
+- On peut aussi créer des CPT avec des extensions exemple CPT UI (gratuit)
+
 ### Créer un CPT
 Dans functions.php déclarer:
 ```php

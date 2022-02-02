@@ -279,3 +279,12 @@ code de la page
         2. le nom du champs personnalisé
         3. si *true* = valeur du champs est unique pour l'article, si *false* la meta sera un tableau et non une string
 + de base ils ne sont pas très avancés, on utilise généralement ACF du coup
+
+## Fonctionnalités "hors code" des thèmes
+- Créer une page d'attente personnalisée avec *Elementor*:
+    - on créé une nouvelle page que l'on nomme "attente" , une fois qu'on l'a personnalisé selon nos souhaits on va dans ``elementor>>outils>>maintenance>>arrive bientot>>`` on choisit ensuite le modèle qu'on vient de créer 
+
+- Avec *Elementor* et *OceanWP* on peut créer des footer et header personnalisés, cela permet d'avoir des designs plsu complexes que ceux créés avec le customer (avec la version premium d'*elementor* on peut meme faire cela pour toutes les parties (body, articles, pages,...)) dans ce cas le thème n'est quasi plus utilisé.
+
+- On peut aussi ajouter des règles css personnalisées dans la section "css et JS personnalisé" du customizer:
+    - On localise déjà le composant souhaité (en mode inspection par exemple), on lui ajoute une classe un id, ou on retient le code utilisé pour le cibler situé dans la colonne de droite, puis on peux ajouter du css grâce à ces sélecteurs.

@@ -1,15 +1,15 @@
 # Optimisation SEO
 #### Il existe deux types d'optimisations: 
 - Off site:
-    .Déclaration auprès de google search console
-    .Création profil Google My Business
-    .Mise en place de liens entrants sur des ites à fort trafics ou bien référencés sur les mots clés
-    . ... 
+    - Déclaration auprès de google search console
+    - Création profil Google My Business
+    - Mise en place de liens entrants sur des ites à fort trafics ou bien référencés sur les mots clés
+    -  ... 
 
 - On site:
-    .Qualité du contenu (on peut faire appel à un rédacteur web SEO)
-    .Nom de domaine (ex: avoir le mot clé principal dans le nom de domaine, en cas d'activité locale ajouter el nom de la ville)
-    .Titres et description de pages (balise titres et meta dans le header)
+    - Qualité du contenu (on peut faire appel à un rédacteur web SEO)
+    - Nom de domaine (ex: avoir le mot clé principal dans le nom de domaine, en cas d'activité locale ajouter el nom de la ville)
+    - Titres et description de pages (balise titres et meta dans le header)
 
 #### POur cela on peut utiliser des extensions comme SEO Press:
 - Il va donner une liste de recommendations pour notre site:

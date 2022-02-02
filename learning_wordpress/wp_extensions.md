@@ -6,16 +6,23 @@
     - premium (payante, généralemnt trouvable sur leur propre site officiel, ou sur des marketplace comme Codecanyon ou themeforest)
     - A cela s'ajoute les add-ons, des sortes d'extension d'extension (quand une extension est trop grosse des parties sont intégrés séparément, comme ça on prend que ce qu'on a besoin)
 
-+ Pour choisir une extension o peut regarder:
++ Pour choisir une extension on peut regarder:
     - le nbr d'installations
     - les avis et note
     - la date de dernière maj
     - faire attention aux liens d'affiliation (tjrs regarder que celui qui fait un avis sur une extension est objectif)
 
++ Quand on souhaite insérer une fonctionnalité (réalisée avec une extension) dans un article ou une page, il existe deux solutions:
+    - Un shortcode: qui sera interprété dynamiquement lors de la génération de la page
+    - Un widget
+
++ Quand on met en place un formulaire de contact il faut choisri une solution qui enregistre les demandes en base de données, ou utiliser un addon pour le faire, afin d'éviter que les e-mails se perdent ou soient mal configurés 
 ## Exemples d'extension utiles
 + formulaires
     - Ninja Forms (freemium)
     - Gravity Forms (payant)
+    - Contact Form 7
+    - Wp Form
 + SEO
     - Yoast SEO
 + Performance
