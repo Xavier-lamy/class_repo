@@ -16,3 +16,4 @@
 - open in browser
 - php cs fixer
 - Php Intelephense
+- Markdown Preview Mermaid Support
