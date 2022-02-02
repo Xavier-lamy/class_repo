@@ -11,7 +11,7 @@
 - js & css minify
 - Laravel Blade Snippets
 - php Debug (nécessite Php XDebug)
-- live sass compiler
+- live sass compiler (version de Glenn Marks, celle de Ritwick Dey n'est plus à jour)
 - live server
 - open in browser
 - php cs fixer
