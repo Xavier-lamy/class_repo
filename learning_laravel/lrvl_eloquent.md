@@ -197,3 +197,7 @@ Si on souhaite récupérer les données (exemple nos articles en bdd) pour les e
         $post->delete()
     }
     ```
+## Chercher des éléments dont les ids sont dans une liste
+```php
+$post = Post::whereIn('id', $ids)->get();
+```
