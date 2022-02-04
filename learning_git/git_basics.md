@@ -92,6 +92,8 @@ Un **gestionnaire de versions** , permet aux dev de garder un historique  de cha
 
 - ``git init``: initialise le dossier comme étant un dépot
 
+- Le premier commit s'appelle généralement "first commit"
+
 ### Cloner
 ```
 git clone https://github.com/UserName/projet.git
@@ -228,12 +230,21 @@ Elles permettent de mettre en attente des modifs non finies et d'y revenir aprè
 ### Synchronisation entre les dépôts
 - ``git fetch nom-distant`` : récupère les données du depot sous une autre branche
 
-- ``git pull`` récupère les données d'une branche distante et les fusionne à notre branche locale
+- ``git pull`` récupère les données d'une branche distante et les fusionne à notre branche locale, on peut aussi si on a des modifs sur une branche annexe todo, qu'on ne peut pas merge directement sur main car elle n'est pas fini, on peut faire ``git pull origin todo``
 
 ### Avancé
 - ``git rebase`` : récupère les modifications validées sur une branche pour les intégrer à une autre, cela revient un peu au meme qu'un merge, mais l'historique est plus clair car les modifs apparaissent en série, ne jamais rebaser des commits déjà push sur un depot public
 
 - ``git bissect`` = Utilise la [recherche dichotomique](../learning_general/algorithmic.md/#recherche-dichotomique) pour trouver quel *commit*, d'une liste de *commit* situés entre un "bon" et un "mauvais" *commit*, a introduit un bug
+
+### Méthode Kanban
+On peut utiliser la méthode Kanban pour nommer nos branches
+3 branches:
+- todo
+- in progress
+- done
+
+
 
 ### GitFlow et Source Tree
 + source tree permet de gérer son git flow, on peut

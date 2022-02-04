@@ -192,6 +192,14 @@ Le problème de la **gestion séquentielle** est que l'on doit faire chaque éta
 
 5. Puis on passe au sprint suivant et ainsi de suite. 
 
+### Méthode Kanban
+Elle consiste à organiser les étapes de productions en 3 ou 4 étapes:
+- Todo
+- In progress
+- (Test)
+- Done
+
+Les tâches dans in progress ne doivent pas être trop nombreuses, on attend qu'elles passent dans done (grâce à la validation par les tests s'il y en a) avant d'entamer une nouvelle tâche de la toDo list
 ##### Des idées d'outil pour l'agile:
 - Jira
 - Trello
