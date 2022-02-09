@@ -9,7 +9,7 @@ mix.js('resources/js/app.js', 'public/assets/js') //Récupère le js dans ressou
     ]);
     //ou pour le sass
     .sass('resources/scss/app.scss', 'public/assets/css', [
-
+        require('tailwindcss'), //Si nécessaire on ajoute les dépendances ici
     ]);
 ```
 - ce fichier prend nos fichiers scss ou css et js dans ``ressources`` et les rassemble en un seul fichier js et un seul css dans le dossier ``public``.

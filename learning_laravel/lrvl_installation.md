@@ -3,26 +3,26 @@
 ## Installer un nouveau projet:
 - ``composer create-project laravel/laravel example-app``
 - ``cd example-app``
-- ``php artisan serve``
 - créer la db et la linker dans le ``.env``
 - ``php artisan migrate``
+- ``php artisan serve``
 
 ## Installer laravel sur un projet existant:
 dans le dossier du projet;
 - ``composer install``
-- ``php artisan serve``
 - créer la db
 - linker dans le ``.env``
 - ``php artisan key:generate``
 - ``php artisan migrate``
+- ``php artisan serve``
 
 ## Sous laragon:
 - créer un site web rapidement: --> laravel
-- ``php artisan serve``
 - créer la db
 - linker dans le ``.env``
 - ``php artisan key:generate``
 - ``php artisan migrate``
+- ``php artisan serve``
 
 ## Quand on revient sur un projet ou qu'on le clone depuis github
 Certaines parties ne sont pas embarquées avec git (car on les met dans .gitignore), exemple:
