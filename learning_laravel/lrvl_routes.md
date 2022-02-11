@@ -78,7 +78,7 @@ class PostController extends Controller{
     - ``<a href=" {{ route('stock.modify', ['id' => $product->id]) }} " class="button--sm">Modify</a>``
 + Dans web.php on a une route avec l'argument entre accolades:
     - ``Route:: get('/stocks/modify/{id}', [FrontController::class, 'modify_stock_product'])->name('stock.modify');``
-+ Dans notre contôleur on a notre fonction avec le paramètre passé en argument:
++ Dans notre contrôleur on a notre fonction avec le paramètre passé en argument:
 ``` 
 public function modify_stock_product($id) {
     $products = Stock::all();
@@ -90,4 +90,44 @@ public function modify_stock_product($id) {
 }
 ```
 
+## Les **resources routes**
++ On peut créer simplement toute les routes d'un crud en en déclarant une seule avec ``resource``:
+    - Par exemple après avoir utiliser : ``php artisan make:controller StockController --resource`` pour créer un *controler* pour les stocks avec toutes les méthodes de CRUD
+    - On peut alors utiliser la déclaration de route suivante afin de déclarer chaque route pour chaque méthode
+    ```php
+    use App\Http\Controllers\PostController;
+    
+    Route::resource('posts', PostController::class);
+    ```
+    - On peut vérifier la présence de ces routes avec: ``php artisan route:list``
++ On peut aussi créer les routes pour plusieurs contrôleurs avec une array:
+```php
+Route::resources([
+    'photos' => PhotoController::class,
+    'posts' => PostController::class,
+]);
+```
++ On peut exclure des méthodes en précisant seulement celles qu'on veut ou celles qu'on ne souhaite pas:
+```php
+use App\Http\Controllers\PhotoController;
+ 
+Route::resource('photos', PhotoController::class)->only([
+    'index', 'show'
+]);
+ 
+Route::resource('photos', PhotoController::class)->except([
+    'create', 'store', 'update', 'destroy'
+]);
+```
 
+## Groupe de routes
+### Controllers
++ On peut grouper les routes par contrôleur pour n'avoir que la méthode à écrire à chaque fois:
+```php
+use App\Http\Controllers\OrderController;
+ 
+Route::controller(OrderController::class)->group(function () {
+    Route::get('/orders/{id}', 'show');
+    Route::post('/orders', 'store');
+});
+```

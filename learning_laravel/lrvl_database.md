@@ -23,17 +23,38 @@ Schema::create('users', function (Blueprint $table) {
 - On a aussi ``php artisan migrate:reset`` pour revenir à zéro
 - ``php artisan migrate:refresh`` pour revenir à zéro puis effectuer une migration
 - les migrations permettent de pouvoir charger les tables sur chaque environnment de développement
-- si on a besoin de modifier une valeur dans une table (exemple paser une valeur en unique après coup), il faut ajouter cela dans le ``model``
-- Exemple: par défaut la table dans les migrations prend pour nom le nom du modèle sans majuscule et mis au pluriel, on peut changer ça
+- par défaut la table dans les migrations prend pour nom le nom du modèle sans majuscule et mis au pluriel, on peut changer ça
+- On peut rajouter des données à une table sans refaire forcément la migration de création, il suffit simplement de créer une migration pour ajouter, supprimer ou modifier des données (dans ce cas on utilise: ``Schema::table`` au lieu de ``Schema::create``):
 ```php
-<?php
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+ 
+Schema::table('users', function (Blueprint $table) {
+    $table->integer('votes');
+    $table->string('name', 20)->change(); //Exemple si le nom pouvait avoir 50 caractères avant on peut changer ça en 20 avec change()
+});
+```
+- On peut modifier le nom d'une table sans changer sa migration de base, en créant une nouvelle migration:
+```php
+use Illuminate\Support\Facades\Schema;
+ 
+Schema::rename($from, $to);
+```
 
+## Models
+- Les modèles servent pour les requêtes Eloquent, ce sont des sortes d'objet qui représentent une table
+- si on a besoin de modifier une valeur dans une table (exemple paser une valeur en unique après coup), il faut ajouter cela dans le ``model``
+- On peut ajouter des constantes (par example si on sait qu'une valeur dans un des champs de la table, sera toujours la même on peut la définir dans une constante pour pouvoir la changer facilement dans tout le projet si sa valeur est amenée à changer)
+```php
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    public const RANDOM_NAME = 'value';
+    public const ARRAY_NAME = ['a', 'b'];
+
     protected $fillable = ['ingredient', 'quantity', 'unit', 'alert_stock', 'must_buy']; //Indique quels champs protégés sont remplissables
 
     public $timestamps = false; //Retire le timestamp des tables
@@ -98,6 +119,35 @@ public function up(){
     })
 }
 ``` 
+
+## SoftDeletes:
++ Quand on ajoute un champs softDeletes, on pourra utiliser le softDelete d'Eloquent pour "supprimer partiellement" des données,
+    - c'est à dire qu'au lieu d'être supprimées, un timestamp reprenant la date et l'heure de suppression est ajouté dans une colonne crée automatiquement par ``$table->softDeletes`` 
+    - ainsi les enregistrements en bdd ne sont jamais réellement supprimés, en revanche ils ne seront pas accessibles par les requêtes normales
+    - ce qui revient donc au même que de les supprimer mais en les gardant au cas ou dans la bdd:
+```php
+$table->softDeletes($column = 'deleted_at', $precision = 0);
+```
++ Pour ajouter le softDelete aux éléments d'une table il faut l'utiliser dans le modèle, quand on supprimera une donnée, ce sera le soft delete qui sera utilisé:
+```php
+namespace App\Models;
+ 
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+ 
+class Flight extends Model
+{
+    use SoftDeletes;
+}
+```
++ On peut restorer une entrée supprimée en softDelete grâce à ``restore()``
+```php
+$flight->restore(); //Remplace le timestamp dans la colonne deleted_at par la valeur NULL
+```
++ Si on a activé le softDelete mais qu'on souhaite supprimer définitivement une entrée de la bdd on peut forcer la suppression:
+```php
+$flight->forceDelete();
+```
 
 ## Factories
 Il s'agit de classes qui servent à générer des données qu'on inscrit dans la bdd, (exemple ajouter des faux articles lorem impsum pour les tests), on peut les trouver dans ``database/factories``

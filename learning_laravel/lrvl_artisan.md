@@ -11,3 +11,4 @@ Il s'agit d'une liste de commandes qu'on peut utiliser avec laravel et qui perme
 - ``php artisan make:test RandomTest`` = pour créer un test laravel dans features
 - ``php artisan make:test RandomTest --unit`` = pour créer un test laravel dans unit
 - ``php artisan make:model Post -m`` = pour créer un modèle (``Post``) et la migration (avec une table ``posts``) qui va avec
+- ``php artisan route:list`` = liste toutes les routes de l'application
