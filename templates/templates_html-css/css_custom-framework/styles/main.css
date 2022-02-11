@@ -1,0 +1,308 @@
+/*Variables*/
+/*Fonts*/
+/*Colors*/
+/*Fonts size*/
+/**Fonts**/
+@font-face {
+  font-family: "Domine";
+  src: url("../assets/fonts/Domine-Regular.woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Domine";
+  src: url("../assets/fonts/Domine-Bold.woff");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Regular.woff");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Bold.woff");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../assets/fonts/Montserrat-Italic.woff");
+  font-style: italic;
+  font-display: swap;
+}
+
+/*General*/
+body {
+  background-color: #e4d7d7;
+  color: #272525;
+  font-size: 0.9em;
+  font-family: "Montserrat", sans-serif;
+  margin: 0em;
+  line-height: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Domine", serif;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2.6em;
+}
+
+h3 {
+  font-size: 2.2em;
+}
+
+h4 {
+  font-size: 1.8em;
+}
+
+h5 {
+  font-size: 1.4em;
+}
+
+h6 {
+  font-size: 1.2em;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*Colors*/
+.text--light {
+  color: #d6d6d6;
+}
+
+.text--dark {
+  color: #151515;
+}
+
+/*Backgrounds*/
+.bg--primary {
+  background-color: #294673;
+}
+
+.bg--secondary {
+  background-color: #2f6872;
+}
+
+/*Animation: underline when hover*/
+.link, header a, footer a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #272525;
+}
+
+.link:hover, header a:hover, footer a:hover, .link :active, header a :active, footer a :active, .link :focus, header a :focus, footer a :focus {
+  color: #272525a9;
+}
+
+.link:after, header a:after, footer a:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 0.1em;
+  bottom: 0;
+  left: 0;
+  background-color: #272525a9;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  transition: -webkit-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
+  transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out;
+}
+
+.link:hover:after, header a:hover:after, footer a:hover:after, .link[aria-current="page"]:after, header a[aria-current="page"]:after, footer a[aria-current="page"]:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.link--dark {
+  color: #151515;
+}
+
+.link--dark:hover, .link--dark :active, .link--dark :focus {
+  color: #151515a9;
+}
+
+.link--dark:after {
+  background-color: #151515a9;
+}
+
+.link--light, header a, footer a {
+  color: #d6d6d6;
+}
+
+.link--light:hover, header a:hover, footer a:hover, .link--light :active, header a :active, footer a :active, .link--light :focus, header a :focus, footer a :focus {
+  color: #d6d6d6a9;
+}
+
+.link--light:after, header a:after, footer a:after {
+  background-color: #d6d6d6a9;
+}
+
+/*Elements*/
+.list--unstyled {
+  list-style: none;
+}
+
+button, .button {
+  background-color: #294673;
+  color: #272525;
+  border-style: none;
+  border-radius: 1.6em;
+  display: inline-block;
+  padding: 0.6em 2.1em;
+  -webkit-transition: background-color 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  transition: background-color 0.2s ease-in, -webkit-transform 0.2s ease-in;
+  transition: transform 0.2s ease-in, background-color 0.2s ease-in;
+  transition: transform 0.2s ease-in, background-color 0.2s ease-in, -webkit-transform 0.2s ease-in;
+}
+
+button:hover, .button:hover {
+  cursor: pointer;
+  background-color: #213e69;
+  text-decoration: none;
+  -webkit-transform: scale(1.09);
+          transform: scale(1.09);
+}
+
+button--lg, .button--lg {
+  display: block;
+  text-align: center;
+}
+
+input, textarea {
+  background-color: #2f6872;
+  border: none;
+  color: #272525;
+  margin: 0em 1em;
+}
+
+input:active, input:focus, textarea:active, textarea:focus {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  outline: none;
+}
+
+::-webkit-input-placeholder {
+  color: #272525;
+  opacity: 1;
+  font-family: "Montserrat";
+}
+
+:-ms-input-placeholder {
+  color: #272525;
+  opacity: 1;
+  font-family: "Montserrat";
+}
+
+::-ms-input-placeholder {
+  color: #272525;
+  opacity: 1;
+  font-family: "Montserrat";
+}
+
+::placeholder {
+  color: #272525;
+  opacity: 1;
+  font-family: "Montserrat";
+}
+
+/*Padding and margin*/
+.p--3 {
+  padding: 1rem;
+}
+
+.px--3, .navbar li {
+  padding: 0rem 1rem;
+}
+
+.pr--3, .navbar i {
+  padding-right: 1rem;
+}
+
+/*Display*/
+.dsp--none {
+  display: none;
+}
+
+.dsp--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flxdir--col {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flxdir--row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.justify--between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.justify--around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+/*Icons and pictures*/
+.logo {
+  margin: 0.5em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+/*Main*/
+.wrapper {
+  margin: 5%;
+  min-height: 80vh;
+}
+
+.copyright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  width: 100%;
+}
+
+.copyright small {
+  padding: 2em 2em 1em 1em;
+}
+/*# sourceMappingURL=main.css.map */
