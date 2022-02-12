@@ -1,4 +1,5 @@
 # Some classes to display a container on full width compare to a wrapper
+
 ```scss
 .alignwide {
     margin-left: -50px;
