@@ -1,6 +1,8 @@
-# Le Css
-
+# Le Css (Cascading Style Sheet)
+ 
 ## Bases
+- Signifie littéralement **feuille de style en cascade** (en raison de son fonctionnement des priorités)
+- Gère l'apparence de la page (agencement, position,  couleur)
 - Héritage: les éléments héritent des propriétés des parents
 - Spécificité: Si deux propriétés différentes sont définies pour un même élément HTML c'est la spécificité (c'est à dire sa place dans la "cascade", plus l'élément est générique, moins il est prioritaire)
 
