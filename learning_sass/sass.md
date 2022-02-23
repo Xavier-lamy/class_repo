@@ -25,6 +25,16 @@ extension *Live Sass Compiler* : très utile, (par Glenn Marks, la version de Ri
 
 *Variable impérative* = si on utilise une var et qu'on modifie ensuite sa valeur, son utilisation antérieure reste la même
 
+### Interpoler une variable
+Si on souhaite ajouter une variable dans un calcul (avec la fonction ``calc()``) il faut penser à l'interpoler:
+```scss
+element {
+    $var: 16px;
+
+    margin: calc(10px + #{$var});
+}
+```
+
 
 ### Valeur par défaut
 ``$var: value !default;`` = la valeur n'est affecté à la variable que si la variable n'est pas définie ou est null, sinon la valeur existante sera utilisé

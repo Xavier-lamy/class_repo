@@ -7,7 +7,7 @@
 }
 
 .alignfull {
-    margin: 0px calc(50%-50vw);
+    margin: 0px calc(50% - 50vw);
     max-width: 100vw;
     width: 100vw;
 }
