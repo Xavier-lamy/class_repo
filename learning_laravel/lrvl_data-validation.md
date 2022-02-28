@@ -31,6 +31,11 @@
     @endif
     ```
 
+### Exemple de règles
+- ``sometimes``: si un champ n'est pas assuré d'être toujours présent, il ne sera validé que quand il sera présent
+- ``nullable``: si un champ est optionnel (toujour présent mais peut être vide)
+
+
 ## Créer une règle de validation customisable
 + Dans la console:
     - ``php artisan make:rule RuleName``

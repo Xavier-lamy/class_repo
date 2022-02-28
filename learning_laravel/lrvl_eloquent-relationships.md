@@ -221,3 +221,64 @@ public function imageArtist()
         return $this->hasOne(Comment::class)->oldestOfMany();
     }
     ```
+
+### Utiliser ``create()`` et ``createMany()``
+Quand on ajoute une entrée dans une table et qu'on souhaite ajouter des entrées dans les entrées en relation avec cette entrée parente, dans une autre table on peut:
+- Insérer l'entrée puis récupérer son id (la méthode retourne l'objet créé) et ajouter des entrées avec cet id en guise de foreign_key:
+```php
+$menu = Menu::create([
+    'day' => $day,
+]);
+
+$dish = Dish::create([
+    'menu_id' => $menu->id,
+    'meal_time' => $meal_time,
+    'recipe_id' => $recipe_id,
+    'portion' => $portion,
+]);
+```
+- Ou on peut utiliser les relations eloquent pour ajouter directement au modèle parent (en profitant de la relation hasOne/belongsTo qu'on a mis en place), on a donc pas besoin d'entrer le foreign ID qui sera automatiquement ajouté par laravel:
+```php
+//Pour ajouter une entrée
+$menu = Menu::create([
+    'day' => $day,
+])->dishes()->create([
+    'meal_time' => $meal_time,
+    'recipe_id' => $recipe_id,
+    'portion' => $portion,
+]);
+
+//Pour ajouter plusieurs entrées
+$menu->createMany([
+    [
+        'meal_time' => $meal_time,
+        'recipe_id' => $recipe_id,
+        'portion' => $portion,
+    ],
+    [
+        'meal_time' => $meal_time2,
+        'recipe_id' => $recipe_id2,
+        'portion' => $portion2,
+    ],
+]);
+```
+
+### ``UpdateOrCreate()`` et ``upsert()``
+On peut utiliser ``updateOrCreate()`` pour mettre à jour une table: si une entrée existe elle sera mise à jour, sinon elle sera créée avec les données fusionnées de la vérification (1er argument) et des données à mettre à jour (2eme argument)
+```php
+//Ajouter ou mettre à jour l'entrée d'ID 1 de la table dishes:
+$menu = Dish::updateOrCreate(
+    ['menu_id' => '1'],
+    ['recipe_id' => 3, 'portion' => 4]
+);
+
+//Ajouter plusieurs entrées (1er argument: les entrées à modifier ou ajouter, 2eme: les colonnes sur lesquelles on vérifie, 3eme: les valeurs à modifier)
+Dish::upsert(
+    [
+        ['menu_id' => 1, 'recipe_id' => 2, 'portion' => 4],
+        ['menu_id' => 1, 'recipe_id' => 3, 'portion' => 5]
+    ],
+    ['menu_id'],
+    ['recipe_id', 'portion']
+);
+```
