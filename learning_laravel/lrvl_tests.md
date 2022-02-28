@@ -64,6 +64,16 @@
 
 - ``assertRegExp(string $pattern, string $string[, string $message = ''])``: Signale une erreur si $string ne correspond pas a l’expression régulière $pattern
 
+- ``assertDatabaseHas('users', ['name' => 'Bob'])``: Vérifie que la base de données possède une entrée avec pour nom Bob dans la table ``users``
+
+- ``assertDatabaseCount('users', 5)`` : vérifie que le nombre d'entrées dans ``users`` est égal à 5
+
+- ``assertDatabaseMissing('users', ['name' => 'Bob'])``:  vérifie que la bdd ne possède pas d'entrée avec un utilisateur nommé Bob dans la table ``users``
+
+- ``assertDeleted($user)`` : vérifie la suppression d'une entrée de la base de donnée (récupérée sous la forme d'un model Eloquent au préalable)
+
+- ``assertSoftDeleted($user)`` : vérifie le "soft delete" d'une entrée de la base de donnée (récupérée sous la forme d'un model Eloquent au préalable)
+
 - [Liste complète des assertions sur la doc de phpunit](https://phpunit.readthedocs.io/fr/latest/assertions.html)
 - [Liste complète des assertions propre à laravel](https://laravel.com/docs/8.x/http-tests#available-assertions)
 
@@ -197,3 +207,45 @@ class WelcomeControllerTest extends TestCase
     }
 }
 ```
+
+### Utiliser les seeders pour les tests
+- Avec laravel 8 on peut utiliser des seeders facilement avec ``refreshdatabase``
+- à chaque test on peut donc exécuter les seeders (par défaut la classe ``DatabaseSeeder`` qui exécute tous les seeders qu'on a déclaré dans cette classe)
+- On peut changer les seeders qui seront exécutés (par exemple si on souhaite avoir des seeders particuliers juste pour les tests)
+```php
+namespace Tests\Feature;
+ 
+use Database\Seeders\TestMenuSeeder;
+use Database\Seeders\TestRecipeSeeder;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Tests\TestCase;
+ 
+class MenuTest extends TestCase
+{
+    use RefreshDatabase;
+ 
+    /**
+     * Test creating a new menu.
+     *
+     * @return void
+     */
+    public function testMenuCreatedCorrectly()
+    {
+        //Si on veut seed la base de données:
+        $this->seed();
+ 
+        //Si on veut seulement certains seeders:
+        $this->seed(TestMenuSeeder::class);
+ 
+        //Pour une array de seeders:
+        $this->seed([
+            TestMenuSeeder::class,
+            TestRecipeSeeder::class,
+        ]);
+
+        //Test ici
+    }
+}
+```
+- On peut par exemple préparer des seeders faits pour les tests dans un sous-dossier ``seeders/tests`` 

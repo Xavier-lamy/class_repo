@@ -8,6 +8,7 @@ Il s'agit d'une liste de commandes qu'on peut utiliser avec laravel et qui perme
 - ``php artisan make:migration name_of_migration`` (ex: ``remove_comments_table`` créera une migration ou on pourra ajouter une fonction pour supprimer une table )
 - ``php artisan make:controller StockController --resource`` : crée un controlleur le flag --resource permet de créer les emplacements pour les méthodes de crud (index, create, store, show, edit, update, destroy)
 - ``php artisan test`` = pour lancer les tests de laravel
+- ``php artisan test --filter UserTest`` = pour lancer un test en particulier
 - ``php artisan make:test RandomTest`` = pour créer un test laravel dans features
 - ``php artisan make:test RandomTest --unit`` = pour créer un test laravel dans unit
 - ``php artisan make:model Post -m`` = pour créer un modèle (``Post``) et la migration (avec une table ``posts``) qui va avec
