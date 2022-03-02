@@ -102,5 +102,25 @@ if (Auth::attempt($credentials, $remember)) {
 }
 ```
 
+### Déconnecter l'utilisateur
+```php
+/**
+ * Disconnect user and end session
+ * 
+ * @param  \Illuminate\Http\Request  $request
+ * @return \Illuminate\Http\Response
+ */
+public function logout(Request $request)
+{
+    Auth::logout();
+
+    $request->session()->invalidate();
+    
+    $request->session()->regenerateToken();
+    
+    return redirect('guest');
+}
+```
+
 
  
