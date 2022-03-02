@@ -131,3 +131,17 @@ Route::controller(OrderController::class)->group(function () {
     Route::post('/orders', 'store');
 });
 ```
+
+### Middleware
++ On peut utiliser des middlewares pour un groupe, les middleware sont lus dans  l'ordre ou on les liste
+```php
+Route::middleware(['first', 'second'])->group(function () {
+    Route::get('/', function () {
+        // Uses first & second middleware...
+    });
+ 
+    Route::get('/user/profile', function () {
+        // Uses first & second middleware...
+    });
+});
+```
