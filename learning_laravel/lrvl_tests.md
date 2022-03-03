@@ -270,3 +270,25 @@ public function testFrontView()
 }
 ```
 - Attention cette dernière méthode ne renvoie pas l'id (elle crée juste un modèle de user), cela peut donc être utile uniquement si la méthode de la route testée ne demande pas l'id utilisateur, dans le cas ou a besoin d'un id, il faut créer un utilisateur avec un id en bdd, ou tester la redirection en absence d'id
+
+### La fonction ``setUp()``
+- Si on souhaite réaliser toujours la meme action avant chaque test on peut utiliser la fonction ``setUp()``:
+```php
+class CommandTest extends TestCase
+{
+    use RefreshDatabase;
+    /**
+     * Prepare the database for tests with the test seeders
+     */
+    public function setUp(): void
+    {
+        parent::setUp();
+        
+        $this->seed(TestDatabaseSeeder::class);
+
+        $this->user = User::find(TestDatabaseSeeder::TESTENV_USER_ID);
+    }
+
+    //Différents Tests de bdd
+}
+```
