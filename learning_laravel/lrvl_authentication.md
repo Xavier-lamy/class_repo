@@ -57,6 +57,27 @@ Route::get('/private', function () {
 ## Utiliser les méthodes vanilla de laravel
 On peut aussi créer un système d'identifiaction sans passer par une librairie, en utilisant les méthodes d'authentificationn de Laravel
 
+### Créer un utilisateur et le connecter directement:
+````php
+public function register(Request $request){
+    //validate request
+    $request->validate([
+        'username' => ['required', 'string', 'min:2', 'max:80'],
+        'email' => ['required', 'email', 'unique:users'],
+        'password' => ['required', 'min:10', 'max:80'],
+    ]);
+
+    $user = User::create([
+        'username' => $request->username,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+    ]);
+
+    Auth::login($user);
+
+    return redirect()->intended(route('front'));
+}        
+````
 ### Exemple pour le login:
 ```php
 namespace App\Http\Controllers;

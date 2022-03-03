@@ -21,6 +21,8 @@ MVC:
 
 - Quand on revient sur un projet après que d'autres aient apporté des modifs dessus, il ne faut pas oublier de faire un composer install
 
+- Si on ajoute ou modifie certains types de fichiers à la main (exemple des Models, Seeders, Migrations,..) il faut penser à faire ``composer dumpautoload``, car quand on les ajoute avec ``php artisan make:`` celui ci les ajoute automatiquement à ``composer.json`` (s'il y a des changements dans les normes de nommage de fichiers PSR4 par exemple), donc quand on ajoute ou modifie à la main, ceci n'est pas fait
+
 ### Utilsation des fonctions avec @
 Avec laravel on peut utiliser ``@`` pour intégrer des fonctions php ou des fonctions propres à laravel:
 - ``@foreach/@end foreach``

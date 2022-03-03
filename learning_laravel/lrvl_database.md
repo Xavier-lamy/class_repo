@@ -63,6 +63,7 @@ class Post extends Model
     protected $primaryKey = 'commands_id'; //change le nom de la colonne clé primaire (id) par un custom
 }
 ```
+- Note: les champs protégés sont désactivés temporairement lors du seeding
 
 ## Créer une relation entre des tables 
 ### Exemple dans le cas d'une relation ``one to many`` (voir relationships pour le reste):

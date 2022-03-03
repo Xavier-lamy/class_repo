@@ -249,3 +249,24 @@ class MenuTest extends TestCase
 }
 ```
 - On peut par exemple préparer des seeders faits pour les tests dans un sous-dossier ``seeders/tests`` 
+
+### Tests authentification
+Si on souhaite tester une route ou une vue avec un middleware, en prétendant que l'utilisateur est connecté on peut utiliser ``actingAs()``, ici pour laravel 8:
+```php
+/**
+ * Test front view
+ *
+ * @return void
+ */
+public function testFrontView()
+{
+    //Create a fake user
+    $user = new User();
+
+    //Check while acting as a user
+    $response = $this->actingAs($user)->get('/');
+
+    $response->assertViewIs('front');
+}
+```
+- Attention cette dernière méthode ne renvoie pas l'id (elle crée juste un modèle de user), cela peut donc être utile uniquement si la méthode de la route testée ne demande pas l'id utilisateur, dans le cas ou a besoin d'un id, il faut créer un utilisateur avec un id en bdd, ou tester la redirection en absence d'id
