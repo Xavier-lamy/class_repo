@@ -18,6 +18,7 @@
 | ``white-space`` | ``pre``, ``nowrap``, ``normal`` | césure (séparation du texte) | 
 | ``word-wrap`` | ``break-word``, ``normal`` | césure forcé (force à couper le mot) | 
 | ``text-shadow`` | ``5px 5px 2px black``  | Ombre de texte (horizontale, verticale, fondu, couleur) | 
+| ``hyphens`` | ``none, manual, auto``  | Indique au navaigateur comment gérer les traits d'unions lors des retours à la ligne  | 
 			
 ## Couleurs et fond
 | Propriété | Exemples de valeurs | Description |

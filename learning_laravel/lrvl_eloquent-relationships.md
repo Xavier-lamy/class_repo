@@ -109,6 +109,25 @@ public function post(){
         ```php
         $user->roles()->detach([1, 2, 3]);
         ```
++ On peut mettre à jour les données de la table pivot:
+    - Exemple si on ajoute un champ ``active`` dans la table pivot pour déterminer si ce role est actif pour cette utilisateur, on peut vouloir ne modifier que l'état (actif ou non) du role, sans le supprimer de l'utilisateur ni k'ajouter (s'il est déjà présent):
+    ```php
+    $user->roles()->updateExistingPivot($roleId, [
+        'active' => true,
+    ])
+    ```
+    - Si on ajoute un champ en plus dans une table pivot, il faut le déclarer dans la relation pour qu'on puisse le récupérer dans le model pivot:
+    ```php
+    public function users(){
+        return $this->belongsToMany(Role::class)->withPivot('active', 'created_by');
+    }
+    ```
+    - Si on veut ajouter un timestamp qui automatique sur notre table pivot:
+    ```php
+    public function users(){
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+    ```
 
 ## One to many (polymorphic)
 - Quand un modèle a plusieurs parents différents: exemple une table commentaire peut etre liée à une table vidéos et à une table articles en meme temps

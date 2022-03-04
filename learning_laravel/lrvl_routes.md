@@ -145,3 +145,50 @@ Route::middleware(['first', 'second'])->group(function () {
     });
 });
 ```
+
+### Groupes nommés ou préfixés
++ Pour préfixer une route:
+```php
+Route::prefix('options')->group(function() {
+    Route::get('/index', [OptionController::class, 'index']);
+    //Renvoie la route options/index
+});
+```
++ Pour préfixer des routes nomées
+```php
+Route::name('options.')->group(function() {
+    Route::get('/options', [OptionController::class, 'index'])->name('index');
+    //Renvoie le nom options.index
+});
+```
+
+## Contraintes de routes
+Si on souhaite valider les paramètres d'une route (exemple valider l'id dans ``show/{id}``), on peut utiliser des ``constraints`` qui retourneront une erreur 404 si ce n'est pas validé:
+- Soit des Regex:
+```php
+Route::get('/user/{name}', function ($name) {
+    //
+})->where('name', '[A-Za-z]+');
+ 
+Route::get('/user/{id}', function ($id) {
+    //
+})->where('id', '[0-9]+');
+ 
+Route::get('/user/{id}/{name}', function ($id, $name) {
+    //
+})->where(['id' => '[0-9]+', 'name' => '[a-z]+']);
+```
+- Soit des ``helpers`` pour certaines des Regex les plus utilisées (exemple vérifier qu'il s'agit d'une valeur numérique, alpha numérique,...):
+```php
+Route::get('/user/{id}/{name}', function ($id, $name) {
+    //
+})->whereNumber('id')->whereAlpha('name');
+ 
+Route::get('/user/{name}', function ($name) {
+    //
+})->whereAlphaNumeric('name');
+ 
+Route::get('/user/{id}', function ($id) {
+    //
+})->whereUuid('id');
+```
