@@ -23,6 +23,10 @@ pour vérifier la compatibilité des technologies
 ## Divers:
 - pour une gestion de finances préférer exprimer les prix en centimes en bdd (nombre entiers) afin d'eviter les bugs liés au float (euros + centimes = décimal)
 
+## Pour des commentaires
+- Ne pas trop commenter (il est inutile de décrire le comportement d'une fonction ``checkIfUserConnected()`` par un commentaire du genre ``//Check if user is connected``)
+- POur commenter il vaut mieux tacher d'écrire un commentaire qui explique pourquoi une fonction fait quelquechose, plutot que comment elle le fait, il faut donc s'assurer que notre fonction est assez explicite (bon nommages des variables code clair et épuré), et expliquer plutot pourquoi on met cette fonction si c'est nécessaire (exemple une fonction qui désactive un élément, pourra facilement etre comprise par ce qu'elle fait, mais il n'est pas dit qu'un dev qui débarque sur le projet comprenne pourquoi elle est présente originellement)
+
 ### Pour les images libre de droit
 Image => outils => licence creative commons
 
