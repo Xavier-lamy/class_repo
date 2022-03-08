@@ -2,7 +2,7 @@
 - [Voir la doc Mermaid](https://mermaid-js.github.io/mermaid/#/) pour plus de détails
 - Preview:
     - Par défaut Mermaid n'est pas rendu en preview sur vscode, on peut ajouter un plugin (ex: ``Markdown Preview Mermaid Support`` par Matt Bierner). 
-    - Sur gitHub la preview n'est pas encore supporté mais sur GitLab oui
+    - La preview est dispo sur gitlab et sur github
     - Il est aussi possible de l'utiliser dans un fichier HTML (voir la doc) notamment via un cdn
 - Pour l'utiliser dans notre ``.md`` il suffit d'ajouter un bloc de code ``mermaid``:
 
