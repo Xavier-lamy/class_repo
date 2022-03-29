@@ -19,3 +19,4 @@
 - Markdown Preview Mermaid Support
 - wordpress snipet
 - px to rem
+- file-icons
