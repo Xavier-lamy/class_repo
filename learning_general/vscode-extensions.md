@@ -20,3 +20,4 @@
 - wordpress snipet
 - px to rem
 - file-icons
+- Tailwind CSS IntelliSense
