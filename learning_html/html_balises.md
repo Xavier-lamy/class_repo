@@ -111,3 +111,8 @@ Elles sont utiles si on leur ajoute des attributs, comme:
 |--------|-------------|
 | ``<divide>`` | Balise de type "block" |
 | ``<span>`` | Balise de type "inline" |
+
+## Balises rares
+| Balise | Description |
+|--------|-------------|
+| ``<kbd>`` | Indique que l'élément est une touche du clavier à saisir |
