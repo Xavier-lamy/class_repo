@@ -1,0 +1,55 @@
+# Bibliothèques
+
+## Swiper
+Il s'agit d'une bibliothèque JavaScript pour réaliser des sliders, la doc est très bien fournie  
+Différents types de slider possible (cumulables)
+- Défaut
+- Navigation
+- Pagination
+- Pagination dynamic
+- Pagination progress
+- Pagination fraction
+- Pagination custom
+- Scrollbar
+- Vertical
+- Space between
+- Slides per view
+- Slides per view auto
+- Centered
+- Centered auto
+- CSS mode
+- Freemode
+- Scroll container
+- Slides Grid
+- Nested
+- Grab cursor
+- Infinite loop
+- Infinite loop with slides per group
+- Slides per group skip
+- Effect fade
+- Effect cube
+- Effect coverflow
+- Effect flip
+- Effect cards
+- Effect creative
+- Keyboard control
+- Mousewheel control
+- Autoplay
+- Manipulation
+- Thumbs gallery
+- Thumbs gallery loop
+- Multiple swipers
+- Hash navigation
+- History
+- RTL
+- Parallax
+- Lazy load images
+- Responsive breakpoints
+- Ratio breakpoints
+- Autoheight
+- Zoom
+- Virtual slides
+- Custom plugin
+- Slideable menu
+- Change direction
+- Watch slides visiblity

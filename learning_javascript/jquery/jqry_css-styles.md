@@ -1,0 +1,19 @@
+# Manipuler les styles css
+- ``css("property")``: Récupère la propriétés passée en argument
+- ``css("property1": "value1", "property2": "value2")``: Ajoute les propriétés css passées en argument, ou change leur valeur si elles existent
+- ``width()``:  Retourne la largeur de l'élément (nombre uniquement, contrairement à ``css("width")`` qui renverrait en valeur un nombre avec l'unité)
+- ``width(15)``: Définit la largeur de l'élément en px
+- ``innerWidth()``:  Retourne la largeur de l'élément + le padding (nombre uniquement)
+- ``innerWidth(15)``: Définit la largeur de l'élément + le padding en px
+- ``outerWidth(true)``:  Retourne la largeur de l'élément + le padding et les bordures (nombre uniquement), ``true`` (argument optionnel): récupère aussi la marge extérieure
+- ``outerWidth(15)``: Définit la largeur de l'élément + le padding et les bordures en px
+- ``height()``:  Retourne la hauteur de l'élément (nombre uniquement)
+- ``height(15)``: Définit la hauteur de l'élément en px
+- ``innerHeight()``:  Retourne la hauteur de l'élément + le padding (nombre uniquement)
+- ``innerHeight(15)``: Définit la hauteur de l'élément + le padding en px
+- ``outerHeight(true)``:  Retourne la hauteur de l'élément + le padding et les bordures (nombre uniquement), ``true`` (argument optionnel): récupère aussi la marge extérieure
+- ``outerHeight(15)``: Définit la hauteur de l'élément + le padding et les bordures en px
+- ``offset()``: renvoie la position d'un élément ou définit la position de tous les éléments d'une liste, par rapport au document, la position est le coin supérieur gauche de l'élément en comptant la bordure, l'objet retourné contient les propriétés ``top`` et ``left``
+- ``position()``: renvoie la position d'un élément ou définit la position de tous les éléments d'une liste, par rapport à la boite de padding de l'élément parent, la position est le coin supérieur gauche de l'élément en comptant la bordure et la marge externe, l'objet retourné contient les propriétés ``top`` et ``left``
+- ``scrollLeft()``: renvoie ou définit la position de la barre de scroll horizontale
+- ``scrollTop()``: renvoie ou définit la position de la barre de scroll verticale
