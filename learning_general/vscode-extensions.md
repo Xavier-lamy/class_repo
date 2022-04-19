@@ -21,3 +21,4 @@
 - px to rem
 - file-icons
 - Tailwind CSS IntelliSense
+- Python intellisense
