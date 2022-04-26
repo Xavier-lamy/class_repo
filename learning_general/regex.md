@@ -68,6 +68,7 @@ Les éléments type lookaround sont des assertion, ils sont uniquement pris en c
 - __#q(?!u)#__: negative lookahead: cherche les "q" non suivis d'un "u"
 - __#(?<=q)u#__: positive lookbehind: cherche les "u" précédés d'un "q" (le moteur de regex fonctionne à l'envers pour la recherche)
 - __#(?<!q)u#__: negative lookbehind: cherche les "u" non précédés d'un "q"
+- Si on souhaite ajouter des parenthèses capturantes, il faut les mettre au tour de la regex dans notre lookaround: ex: __#(?<!(q))u#__
 ## Métacaractères
 - Quand on souhaite rechercher les métacaractères (tous les caractères utilisés pour les regex):
 - __\# ! ^ $ ( ) [ ] { } | ? + * .__
