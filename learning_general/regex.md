@@ -57,6 +57,17 @@
 - __\s__ : espace blanc (\t, \n, \r)
 - __\S__ : pas un espace blanc
 - __.__ : classe universelle (n'importe quel caractère)
+- __\b__: word boundary, match une limite de mot, c'est à dire soit le début d'une string, la fin d'une string, ou au milieu de deux caractères dont l'un est un caractère alpha numérique et l'autre non (ex:whitespace)
+- __\B__: match là où __\b__ ne match pas, c'est à dire au milieu de deux caractères alphanumériques ou de deux caractères non alphanumériques
+
+## Lookahead et lookbehind (lookaround)
+> Les parenthèses ne comptent pas comme des parenthèses capturantes  
+Les éléments type lookaround sont des assertion, ils sont uniquement pris en compte pour vérifier la présence d'un élément proche de l'élément souhaité
+
+- __#q(?=u)#__: positive lookahead: cherche les "q" suivis d'un "u"
+- __#q(?!u)#__: negative lookahead: cherche les "q" non suivis d'un "u"
+- __#(?<=q)u#__: positive lookbehind: cherche les "u" précédés d'un "q" (le moteur de regex fonctionne à l'envers pour la recherche)
+- __#(?<!q)u#__: negative lookbehind: cherche les "u" non précédés d'un "q"
 ## Métacaractères
 - Quand on souhaite rechercher les métacaractères (tous les caractères utilisés pour les regex):
 - __\# ! ^ $ ( ) [ ] { } | ? + * .__
