@@ -87,3 +87,4 @@ Les éléments type lookaround sont des assertion, ils sont uniquement pris en c
 - __i__ : indifférence entre majuscule et minuscule
 - __s__ : "." fonctionne aussi désormais pour \n (ce n'est pas le cas par défaut)
 - __U__ : la regex s'arrête le plus tôt possible
+- __g__ : la regex fonctionne de manière globale (sans s'arrêter au premier match, lorsqu'on utilise une fonction type ``replace()`` ou ``match()``)
