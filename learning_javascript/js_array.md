@@ -24,3 +24,14 @@ cakes.push("lemon tart") // "push" ajoute un élément à la fin d'un tableau
 cakes.unshift("myBigBurger") //"unshift ajoute un élément au début"
 cakes.pop() //"pop" supprime le dernier élément du tableau
 ```
+
++ Méthode ``filter()``
+Retourne un nouveau tableau remplissant les conditions du filtre:
+```js
+const weapons = ['knife', 'spoon', 'pistol', 'gun', 'nuclear bomb', 'flamethrower tank'];
+
+const result = weapons.filter(weapon => weapon.length > 6);
+
+console.log(result);
+// Attendu: Array ['nuclear bomb', 'flamethrower tank']
+```

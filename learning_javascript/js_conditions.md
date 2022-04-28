@@ -103,3 +103,15 @@ switch (accountUser) {
         console.log("Unknown type of account")
 }
 ```
+
+## ``Truthy`` vs ``Falsy``
++ Quand il y a besoin de valider un booléen, JS transformera certains types de valeurs en ``true`` ou ``false``, quand il les rencontre
++ toutes les valeurs sont ``truthy`` et seront évalués à ``true`` par défaut sauf:
+    - ``false``,
+    - ``0``, 
+    - ``-0``,
+    - ``0n``,
+    - ``""``,
+    - ``null``,
+    - ``undefined``,
+    - ``NaN``

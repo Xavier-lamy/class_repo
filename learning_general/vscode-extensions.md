@@ -19,6 +19,7 @@
 - Markdown Preview Mermaid Support
 - wordpress snipet
 - px to rem
-- file-icons
+- material icons (ou file-icons)
 - Tailwind CSS IntelliSense
 - Python intellisense
+- Vetur (si on utilise Vue.js)
