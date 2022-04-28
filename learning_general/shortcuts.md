@@ -19,7 +19,9 @@
         margin-top: 0.3em;
     }
 </style>
-## Raccourcis généraux 
+
+## Raccourcis généraux
+
 - **WIN** **D** = REDUIRE TOUTES LES FENÊTRES
 - **F11** = PLEIN ECRAN
 - **WIN** **←**/**→** = FENÊTRE SUR MOITIE DROITE/GAUCHE
@@ -58,7 +60,7 @@
 - **Dans un menu** = taper les lettre soulignées pour ouvrir un sous-menu
 - **WIN** **X** **D** **A** = ARRET ORDINATEUR
 - **WIN** **PAUSE** = INFOS SYSTEME
-- **F1** = AIDE LOGICIEL   
+- **F1** = AIDE LOGICIEL
 - **CTRL** **SHIFT** **S** = ENREGISTRER SOUS
 - **CTRL** **S** = ENREGISTRER
 - **CTRL** **A** = TOUT SELECTIONNER
@@ -76,8 +78,8 @@
 - **WIN** **IMPECR** = COPIER ECRAN ET ENREGISTRER DIRECTEMENT DANS UN DOSSIER
 - **WIN** **ALT** **IMPECR** = COPIER FENETRE ACTIVE ET RANGER DIRECTEMENT DANS LE DOSSIER
 
-
 ## Raccourcis traitement texte
+
 - **CTRL** **H** = RECHERCHER ET REMPLACER
 - **CTRL** **G** = GRAS
 - **CTRL** **U** = SOULIGNER
@@ -87,9 +89,11 @@
 - **CTRL** **+** = INDICE INFERIEUR
 - **CTRL** **SHIFT** **P**/**B** = EXPOSANT/INDICE
 - **WIN** **ESPACE** = CHANGER DE CLAVIER
-- **CTRL** **ESPACE** = CHANGER CLAVIER BOPOMOFO/ANGLAIS 
+- **CTRL** **ESPACE** = CHANGER CLAVIER BOPOMOFO/ANGLAIS
+- **SHIFT** **ENTRÉE** = AJOUTER UN RETOUR À LA LIGNE
 
 ## Raccourcis Internet
+
 - **CTRL** **E** = RECHERCHE INTERNET
 - **CTRL** **D** = AJOUTER AUX FAVORIS
 - **CTRL** **H** = HISTORIQUE
@@ -108,8 +112,8 @@
 - **F5**|**CTRL** **R** = RAFRAICHIR
 - **CTRL** **F5**|**CTRL** **SHIFT** **R** = RAFRAICHIR EN VIDANT LE CACHE
 
-
 ## Raccourcis VScode
+
 - **CTRL** **D** = SELECTIONNER LA PROCHAINE OCCURENCE
 - **CTRL** **SHIFT** **L** = SELECTIONNER TOUTES LES OCCURENCES
 - **CTRL** **SHIFT** **P** = PALETTE DE COMMANDES
