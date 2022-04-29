@@ -65,6 +65,22 @@ app.mount('#app')
     </script>
     ```
 
+### Sans build
+Quand on n'utilise pas de build Vue, par exemple pour faire simplements quelques fichiers pour un widget, on peut déclarer un template de composant sous forme d'un objet JS:
+```js
+export default {
+  data() {
+    return {
+      count: 0
+    }
+  },
+  template: `
+    <button @click="count++">
+      You clicked me {{ count }} times.
+    </button>`
+}
+```
+
 ### Les SFC
 ``Single File Component``: termine par l'extension ``.vue``, comprend les 3 éléments (html, script et style) en un seul fichier, ce qui permet d'avoir un fichier pour chaque composant de l'appli:
 ```html
@@ -106,13 +122,13 @@ export default {
 }
 ```
 
-- Une fois un *reactive state* déclaré on peut utiliser la notation en *moustaches* (un peu à la manière de blade dans les templates laravel), cela ne sert que pour l'interpolation de texte:
+- Une fois un *reactive state* déclaré on peut utiliser la notation en *moustaches* (un peu à la manière de blade dans les templates laravel), cela ne sert que pour l'interpolation du innerContent, on peut mettre du texte, ou n'importe quelle expression JS valide (ternaire,..):
 ```html
 <p>{{ message }}</p>
 ```
 
 ### Les directives
-Elles commencent par ``v-`` et ont accès à l'état du composant
+Elles commencent par ``v-`` et ont accès à l'état du composant, elles permettent d'ajouter du contenu réactifs dans les attributs de la balise (on ne peut pas utiliser la syntaxe moustaches pour cela)
 
 #### V-bind
 On peut lier une valeur dynamique à un attribut HTML avec la directive ``v-bind:attrName="componentProperty"`` (raccourci en ``:attrName="componentProperty"``):
