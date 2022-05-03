@@ -212,3 +212,10 @@ Nom: Minerva
 	- on note les 3 plus importants problèmes liés à l'usabilité, qui seront ceux que l'on cherchera à corriger pour la prochaine séance de tests
 	- on ne se préoccupe pas des avis purement esthétiques (préférence de couleur,...) car chaque personne a des gouts différents, sauf si tout le monde est d'accord pour dire que tel ou tel choix est clairement douteux
 + L'objectif est de simplifier le produit en prenant en compte ces remarques
+
+### Les patterns de lecture
+Cela désigne la manière dont les utilisateurs lisent le site (notamment lorsqu'ils passent rapidement dessus)
++ il faut s'assurer que les éléments importants soient visibles dans ces patterns de lecture
++ Il existe notamment: 
+	- L'affichage en F: L'utilisateur va porter son regard sous la forme d'un F, càd que si la première partie du site sera lue entièrement de gauche à droite, par la suite son regard s'arrêtera un peu avant le côté droit (généralement la sidebar n'est donc pas entièrement lue à chaque passage des yeux)
+	- L'affichage en Z: Il consiste à imaginer 4 points qui forment un Z, le premier en haut à gauche peut par exemple etre le logo ou l'identité du site, le deuxième en haut à droite, peut etre le menu, ou les options d'inscription/connexion, le 3 eme en bas à gauche peut contenir des informatins que l'on souhaite passer à l'utilisateur, et en 4 eme en bas à droite, on pourra ajouter un call to action 
