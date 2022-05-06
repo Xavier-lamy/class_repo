@@ -102,6 +102,7 @@ Du `code` dans du texte.
 
 
 ## Liens
+> Note sous VSCode à partir de la version 1.67.0 on peut carrément glisser déposer un document ou une image dans le markdown, et cela crée automatiquement le lien
 
 [Lien](https://example.com/ "titre de lien optionnel")
 
@@ -112,6 +113,7 @@ Du `code` dans du texte.
     - Fonctionne mal avec les caractères spéciaux (car le slug n'est pas correct)
     - ne fonctionne pas avec tous les plugins de rendu markdown
 
+- Depuis VSCode 1.67.0 on peut renommmer le titre du header vers lequel on pointe (f2), et cela corrigera automatiquement tous les liens markdown qui pointent vers cette ancre
 #### Lien explicite
 
 <https://example.com>
