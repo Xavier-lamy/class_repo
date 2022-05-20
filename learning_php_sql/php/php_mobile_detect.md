@@ -3,7 +3,7 @@
 Pour réaliser un affichage différent en fonction de si on est sur mobile ou desktop on peut utiliser:
 
 ## Mobile_Detect
-- Un fichier php qu'on peut télécharger sur le github du projet (ou copier coller),
+- Un fichier php qu'on peut télécharger sur le [github du projet](https://github.com/serbanghita/Mobile-Detect) (ou copier coller),
 - on l'inclut dans nos fonctions (``require_once "libs/Mobile_Detect.php"``) 
 - on peut alors faire des conditions pour vérifier sur quelle type d'appareils on se trouve:
 ```php
