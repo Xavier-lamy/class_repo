@@ -19,6 +19,18 @@
   /* ... */
 }
 ```
+- Si on souhaite créer des composants (comme des boutons), on peut utiliser ``@layer components``, attention cependant à ne pas créer des centaines de composants, le but de tailwind est de nous forcer à avoir des classes spécifiques, si on a vraiment besoin de réutiliser souvent la même série de classe (par exemple si on a souvent un ``bg-blue-500 border rouded text-white``), il faut d'abord se demander s'il n'est pas plus pertinent de créer un template html si on le réutilise plusieurs fois, si en effet créer une classe css custom semble être le plus pertinent alors on peut utiliser ``@layer components``, il est recommandé de l'utiliser sur des petits composants (bouton par exemple):
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75;
+  }
+}
+```
 
 ## Customiser des polices
 + Customiser le thème dans le ``tailwind.config.js``:
@@ -86,7 +98,7 @@ module.exports = {
 }
 ```
 
-## Intallations
+## Installations
 
 ### Installation avec vue.js
 - Après avoir créé un projet vue.js avec:
