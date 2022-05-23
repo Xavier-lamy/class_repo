@@ -85,3 +85,46 @@ module.exports = {
   }
 }
 ```
+
+## Intallations
+
+### Installation avec vue.js
+- Après avoir créé un projet vue.js avec:
+```
+npm init vite my-project
+cd my-project
+```
+- Installer et exécuter le package de tailwind
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+- Ajouter les *path* dans le fichier de config ``tailwind.config.js``
+```js
+module.exports = {
+  content: [
+    "./index.html",
+    "./src/**/*.{vue,js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+- Créer un fichier ``index.css`` dans ``src`` et ajouter les composants tailwind:
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+``` 
+- Ajouter le fichier css dans le js:
+```js
+import { createApp } from 'vue'
+import App from './App.vue'
+//Add this line
+import './index.css'
+
+createApp(App).mount('#app')
+```
+- On peut alors lancer ``npm run dev`` et utiliser les classes css
