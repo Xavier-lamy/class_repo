@@ -157,7 +157,7 @@ module.exports = {
 ```
 
 ## Customiser le thème et nos classes
-- Dans le fichier de config de tailwind on peut modifier ou ajouter de nombreuses valeurs pour customiser le thème, example:
+- Dans le fichier de config de tailwind on peut modifier ou ajouter de nombreuses valeurs pour customiser le thème, exemple:
 ```js
 module.exports = {
   theme: {
@@ -172,9 +172,12 @@ module.exports = {
       'pink': '#ff49db',
       'orange': '#ff7849',
       'green': '#13ce66',
-      'gray-dark': '#273444',
-      'gray': '#8492a6',
-      'gray-light': '#d3dce6',
+      gray: {
+        'dark': '#273444',
+        DEFAULT: '#8492a6',
+        'light': '#d3dce6',
+        100: '#f7fafc',
+      }
     },
     fontFamily: {
       sans: ['Graphik', 'sans-serif'],
@@ -192,6 +195,7 @@ module.exports = {
   }
 }
 ```
+- Attention quand on ajoute les éléments tels que ``colors``, ``font-family``, cela écrase les réglages par défaut de tailwind, si on ne les met pas il prend ceux par défaut, si on souhaite garder des élements tout en ajoutant les notre il faut les mettre dans ``extend{}``
 - Si on souhaite utiliser certains éléments de ce thème dans une classe on peut utiliser la fonction ``theme()``, en paramètre on utilise la notation pointée pour accéder aux différentes valeurs:
 ```css
 .content-area {
@@ -201,9 +205,10 @@ module.exports = {
 .content-area {
   height: calc(100vh - theme('spacing[2.5]'));
 }
-/*Si on utilise des couleurs composées ou avec des variantes, il ne faut pas utiliser la notation avec des tirets (ex: ne pas utiliser 'colors.blue-500' mais:*/
+/*Si on utilise les couleurs avec des variantes de tailwind (comme gray-light), il ne faut pas utiliser la notation avec des tirets (ex: ne pas utiliser 'colors.gray-light', sauf si le nom dans le fichier config est composé d'un tiret mais:*/
 .btn-blue {
-  background-color: theme('colors.blue.500');
+  background-color: theme('colors.gray.light');
+  color: theme('colors.custom-green');/*Dans ce cas par contre on utilise le tiret si la couleur s'appelle custom-green*/
 }
 ```
 
