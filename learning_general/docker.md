@@ -173,7 +173,7 @@ volumes:
 - ``docker scan getting-started`` : pour scanner notre image et vérifier qu'elle ne contient pas de failles de sécurité connues
 
 ## Exemples
-- Dockerfile pour une appli vuejs
+- Dockerfile pour une appli vuejs simplifié (micro dev ou tests), avec un http-server
 ```dockerfile
 FROM node:lts-alpine
 
