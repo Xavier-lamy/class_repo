@@ -23,3 +23,4 @@
 - Tailwind CSS IntelliSense
 - Python intellisense
 - Vetur (si on utilise Vue.js)
+- Docker (microsoft) si on veut utiliser docker
