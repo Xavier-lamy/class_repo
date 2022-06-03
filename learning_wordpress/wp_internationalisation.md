@@ -15,7 +15,7 @@
         + forme au singulier
         + forme au pluriel avec un ``%`` qui sera remplacé par le 3eme paramètre
         + nombre d'éléments (ici des commentaires, dont le nombre aura été récupéré avant avec un ``get_comments_number()``)`
-    - ``_x('Update', ''verb', 'textdomain_name')`` : permet de proposer un contexte pour guider le traducteur, ici *update* peut etre un verbe ou un nom on précise donc de quel type il s'agit
+    - ``_x('Update', 'verb', 'textdomain_name')`` : permet de proposer un contexte pour guider le traducteur, ici *update* peut etre un verbe ou un nom on précise donc de quel type il s'agit
     - ``_nx()`` : permet de gérer à la fois le contexte et le singulier/pluriel
 
 ## Traduire:

@@ -68,7 +68,14 @@ utiliser un logiciel pour *uglifier* , en gros rendre toutes les variables incom
 Ils servent à gérer les dossiers du projet avant la mise en ligne ( minifier le css, offusquer le js,...), webpack est plus souvent utilisé mais gulp et grunt sont des tasks manager ce qui leur permet d'etre plus maléable
 
 ### Uml (*Unified language modeling*)
-//
+C'est un langage de modélisation graphique qui sert à faire des représentations d'architecture logiciels sous forme de schéma, cela permet de représenter les différents composants, schémas de bdd, acteurs et processus
+
+### Progressive Web App
+Décrit les sites internet qui dans leur fonctionnement ressemble aux applis mobiles, l'avantage est de béneficier de la flexibilité et complexité des apps mobiles , sans avoir les problèmes de compatibilité de plateforme
+
+### Peer to peer (P2P)
+Modèle d'échange en réseau où chaque entité possède les deux rôles ``client`` et ``serveur``, il n'y a donc pas besoin de serveur central pour les requêtes (ceertains sytèmes de P2P peuvent quand meme utiliser un serveur central partiellement)
+
 
 ### electron
 sur base js, css,...  (vscode et figma sont fait avec ça)

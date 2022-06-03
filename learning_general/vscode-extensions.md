@@ -1,26 +1,28 @@
 # Extensions utiles:
 - code runner: run c c++ java js php
 - color picker
+- Docker (microsoft) si on veut utiliser docker
 - git history
-- gitHub Markdown Preview, intègre:
+- GitHub Copilot
+- gitHub Markdown Preview, package qui intègre:
     - Markdown Checkbox
     - Markdown Emoji
     - Markdown Preview Github Styling
     - Markdown yaml Preamble
-- git lens
-- js & css minify
+    - Markdown Footnotes
+    - Markdown Preview Mermaid Support
+- gitLens - Git SuperCharger
+- JS & css minifier
 - Laravel Blade Snippets
-- php Debug (nécessite Php XDebug)
 - live sass compiler (version de Glenn Marks, celle de Ritwick Dey n'est plus à jour)
 - live server
 - open in browser
 - php cs fixer
+- php Debug (nécessite Php XDebug)
 - Php Intelephense
-- Markdown Preview Mermaid Support
-- wordpress snipet
 - px to rem
-- material icons (ou file-icons)
+- wordpress snipets
+- Material icons (ou file-icons)
 - Tailwind CSS IntelliSense
-- Python intellisense
+- Python intellisense + Pylance (si on fait du python)
 - Vetur (si on utilise Vue.js)
-- Docker (microsoft) si on veut utiliser docker

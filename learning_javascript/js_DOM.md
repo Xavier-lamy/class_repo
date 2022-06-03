@@ -139,7 +139,7 @@ A partir d'un objet **Element**:
 - ``hasAttribute('attrName')``: vérifie la présence de l'attribut
 - ``attributes()``: renvoie la liste des attributs d'un élément dans un objet de **NamedNodeMap** interface de l'interface **Attr**, sous la forme clef/valeur. pour récupérer tout ça on peut faire une boucle for pour récupérer les propriétés **name** et **value** de **Attr**
 - ``getAttributeNames()``: renvoie un array des noms d'attribut d'un élément
-- ``get Attribute('name')``: renvoie la valeur d'un attribut pour un élément 
+- ``getAttribute('name')``: renvoie la valeur d'un attribut pour un élément 
 - ``setAttribute('name', 'value')``: ajoute un nouvel attribut ou change la valeur d'un attribut
 - ``className('value')``: ajoute ou redéfinit la valeur de l'atribut classe d'un élément
 - ``id('value')``: ajoute ou redéfinit la valeur de l'atribut id d'un élément
