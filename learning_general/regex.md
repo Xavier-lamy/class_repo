@@ -87,5 +87,5 @@ Les éléments type lookaround sont des assertion, ils sont uniquement pris en c
 ## Options
 - __i__ : indifférence entre majuscule et minuscule
 - __s__ : "." fonctionne aussi désormais pour \n (ce n'est pas le cas par défaut)
-- __U__ : la regex s'arrête le plus tôt possible
+- __u__ : modificateur unicode, le moteur de regex détectera alors les caractères UTF-8 tels que les accents (qu'il considérerait comme des caractères multibytes autrement)
 - __g__ : la regex fonctionne de manière globale (sans s'arrêter au premier match, lorsqu'on utilise une fonction type ``replace()`` ou ``match()``)
