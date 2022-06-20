@@ -150,7 +150,7 @@ const compactTestPalindrome = string => {
   
 }
 
-console.clear;
+console.clear();
 console.log("Test with big function:");
 console.log(`${simplePalindrome} is a palindrome: ${testPalindrome(simplePalindrome)}, expected: true`);
 console.log(`${phrasePalindrome} is a palindrome: ${testPalindrome(phrasePalindrome)}, expected: true`);
