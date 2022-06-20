@@ -1,3 +1,5 @@
 # Créer un starter pack laravel avec un container docker et webpack
 
-+ Pour cela on va utiliser laravel sail
++ Pour installer docker sur un projet laravel on utilise [laravel sail](../../learning_laravel/lrvl_sail.md)
+
++ Pour webpack

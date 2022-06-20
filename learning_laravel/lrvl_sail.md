@@ -12,12 +12,21 @@ Le container appartient à un volume et possède aussi un container avec MySQL, 
 - Quand on crée un nouveau Laravel, sail est déjà installé dessus
 
 ### Installation d'un nouveau projet avec docker
-- On utilise ``curl -s https://laravel.build/example-app | bash`` pour créer un nouveau projet laravel (qui contiendra déjà ``sail``) dans le dossier de notre choix
+- On utilise ``curl -s "https://laravel.build/example-app" | bash`` pour créer un nouveau projet laravel (qui contiendra déjà ``sail``) dans le dossier de notre choix (l'option ``-s`` signifie ``-silence``, cela désactive l'affichage de la progression)
+- > Il faut s'assurer d'entrer cette commande dans un shell Unix (comme bash, wsl2 pour window)
 - On utilise ensuite ``sail up`` pour créer le fichier ``docker-compose.yml`` et lancer les containers
 - Si on souhaite choisir des services particuliers on peut ajouter des paramètres à l'url de création:
     - ``curl -s "https://laravel.build/example-app?with=mysql,redis" | bash`` pour exécuter avec mysql et redis
     - les services supportés sont: ***mysql***, ***pgsql***, ***mariadb***, ***redis***, ***memcached***, ***meilisearch***, ***minio***, ***selenium***, et ***mailhog***
-    - les services par défaut si on entre aucun service en paramètre sont: ***mysql***, ***redis***, ***meilisearch***, ***mailhog***, et ***selenium*** 
+    - les services par défaut si on entre aucun service en paramètre sont: ***mysql***, ***redis***, ***meilisearch***, ***mailhog***, et ***selenium***
+
++ Si la méthode ci dessus ne marche pas on peut installer un projet laravel, puis installer sail dessus:
+```bash
+composer create-project laravel/laravel app-name
+cd app-name
+php artisan sail:install
+./vendor/bin/sail up 
+```
 
 ### Installation sur un projet existant
 Si on a déjà un projet installé avec composer et qu'on souhaite ajouter et utiliser sail, il faut:
