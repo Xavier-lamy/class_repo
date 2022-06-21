@@ -33,7 +33,10 @@ Si on a déjà un projet installé avec composer et qu'on souhaite ajouter et ut
 - exécuter ``composer require laravel/sail --dev`` pour indiquer que sail doit être ajouté au dépendances utilisées
 - exécuter ``php artisan sail:install`` qui va créer un fichier ``docker-compose.yml`` à la racine, ou:
     - ``php artisan sail:install --devcontainer`` si on souhaite créer un ``devcontainer`` pour VSCode
-- Par défaut les commandes sail nécessite de taper ``./vendor/bin/sail`` à chaque fois, on peut définir un alias: ``alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'``, ainsi on aura juste à taper ``sail``
+- Par défaut les commandes sail nécessite de taper ``./vendor/bin/sail`` à chaque fois, on peut définir un alias: ``alias sail='bash vendor/bin/sail'``, ainsi on aura juste à taper ``sail``
+- On peut aussi créer un alias de manière permanente dans notre config bash:
+    - exécuter ``nano ~/.bash_aliases`` pour créer et se rendre dans le fichier des alias bash (sur windows, il faudra taper cette commande dans un terminal wsl2), par défaut ce fichier n'est pas créé mais il est déjà lié dans le fichier de config de bash (``.bashrc``)
+    - ajouter ``alias sail='bash vendor/bin/sail'`` à la fin du fichier
 
 #### Lancer les containers
 - exécuter ``./vendor/bin/sail up`` ou juste ``sail up`` pour lancer les différents container définit dans le ``docker-compose.yml``
@@ -68,6 +71,51 @@ Le container MySQL créé dans le volume lance deux bases de données, une de ba
 Toutes les commmandes qu'on peut utiliser pour ``php artisan test`` fonctionne aussi avec ``sail``, on peut donc lancer ``sail test`` pour lancer les tests sur la BDD de test du volume
 
 ### Modifications du fichier docker
-- Il est utile de renommer le nom de l'image du container (afin qu'il soit unique pour cette application), après avoir apporté des changements au fichier de config docker il faut reconstruire l'image avec ``sail build``, puis relancer les containers si besoin avec ``sail up``
+- après avoir apporté des changements au fichier de config docker il faut reconstruire l'image avec ``sail build``, puis relancer les containers si besoin avec ``sail up``
 
-- On peut publier notre image comme pour n'importe quelle image docker avec ``sail artisan sail:publish``
+- On peut utiliser ``sail artisan sail:publish`` pour que sail crée un dossier docker à la racine de notre projet, on peut modifier des éléments de l'image docker (il est notemment conseillé de renommer l'image), après les modifications il faut penser à exécuter à nouveau ``sail build`` (avec en option le flag ``--no-cache``)
+
+### Utilisation
+Quand on crée ou qu'on récupère un projet avec sail, sail s'occupe de la création de la BDD et de la migration de base, en revanche il faut exécuter ``npm install`` pour installer les dépendances, et si on récupère le projet depuis un repo il faut penser à exécuter ``sail artisan migrate``
+
+### Problèmes avec ``sail npm run watch``
+Si npm run watch ne fonctionne qu'avec la première compilation, et ne recompile pas les fichiers à chaque changement on peut utiliser la commande ``sail npm run watch-poll`` qui observe régulièrement les changements au lieu de les observer en permananence, ce problème est lié à webpack qui peut ne pas détecter les changements dans certains environnements locaux
+
+### Utiliser BrowserResync avec sail
+> Pour l'instant cela semble ne pas fonctionner correctement sous windows
+- Exécuter ``sail artisan sail:publish`` pour pouvoir éditer la config du container
+- Dans ``webpack.mix.js`` ajouter les lignes suivantes pour activer la synchronisation dans le navigateur:
+```js
+mix.browserSync({
+    proxy: 'localhost',
+    open: false,
+});
+```
+- Ajouter la ligne ``- 3000:3000`` dans la liste des ports de ``docker-compose.yml``:
+```yml
+ports:
+    - '${APP_PORT:-80}:80'
+    - 3000:3000
+```
+- Redémarrer le container avec ``sail down`` puis ``sail up -d``
+- Si ce n'est pas déjà installé exécuter ``sail npm install`` pour installer les dépendances
+- exécuter ``sail npm run watch-poll`` pour lancer l'observation/compilation, quand on fera une modification cela devrait recharger la page dans le navigateur en plus de recompiler les fichiers
+
+### Utiliser sail avec hotreload
+Avec sail le hot reload ne fonctionne pas de base
+- dans le ``docker-compose.yml```, on ajoute le port pour le hot reload
+```yml
+ports:
+    - '${APP_PORT:-80}:80'
+    - 8080:8080
+```
+- Dans ``webpack.config.js``:
+```js
+module.exports = {
+    devServer: {
+        host: '0.0.0.0',
+        port: 8080,
+    },
+};
+```
+- Ensuite on pourra avoir le hot reload avec ``sail npm run hot``

@@ -69,3 +69,4 @@ Des caractères ``wildcards`` ou ``joker`` qui possèdent une signification spé
 |``less``| |Afficher le contenu d'un fichier mais sous une forme paginée, se déplacer avec les flèches|
 |``more``| |Ancienne version de ``less``, moins complet|
 |``grep thingLookedFor whereToLookFor.txt``| |Chercher des éléments dans un fichier sans même l'ouvrir, ne fonctionne pas avec les répertoires, la console retournera un message d'erreur|
+|``nano nameOfFile``| |Ouvre le fichier avec l'éditeur Nano

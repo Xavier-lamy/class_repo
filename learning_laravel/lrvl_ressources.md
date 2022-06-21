@@ -18,4 +18,16 @@ mix.js('resources/js/app.js', 'public/assets/js') //Récupère le js dans ressou
 - pour compiler ``npm run dev``, ou pour le faire automatiquement à chaque sauvegarde d'un fichier scss: ``npm run watch``
 
 - Pour les images, styles ou scripts, on peut les ranger dans un fichier ``assets`` dans ``public``, puis pour y accéder:
-    + ``src="{{ asset('assets/css/style.css') }}"``
+    + ``src="{{ asset('assets/img/image.png') }}"``
+    + ``link href="{{ asset('assets/css/app.css') }}" rel="stylesheet"``
+
+### Ignorer node_modules
+
+Avant la version 6 de laravel mix il faut ajouter la ligne suivante dans ``webpack.mix.js`` si on souhaite exclure les fichiers node_modules de la compilation automatique:
+```js
+mix.webpackConfig({
+    watchOptions: {
+        ignored: /node_modules/
+    }
+}); 
+```
