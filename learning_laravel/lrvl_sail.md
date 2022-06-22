@@ -78,6 +78,28 @@ Toutes les commmandes qu'on peut utiliser pour ``php artisan test`` fonctionne a
 ### Utilisation
 Quand on crée ou qu'on récupère un projet avec sail, sail s'occupe de la création de la BDD et de la migration de base, en revanche il faut exécuter ``npm install`` pour installer les dépendances, et si on récupère le projet depuis un repo il faut penser à exécuter ``sail artisan migrate``
 
+#### Utilisation depuis un dépôt cloné
+- ``git clone https://gitlab.com/UserName/ProjectName``
+- Installer composer grâce au mini container:
+```bash
+# Sous unix
+docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v $(pwd):/var/www/html \
+    -w /var/www/html \
+    laravelsail/php81-composer:latest \
+    composer install --ignore-platform-reqs
+
+#Sous windows (marche pas complètement voir pas du tout, vue que c'est windows)
+    docker run --rm -v ${pwd}:/var/www/html -w /var/www/html laravelsail/php81-composer:latest composer install --ignore-platform-reqs
+```
+- Créer un fichier ``.env``
+- Lancer le container sail: ``./vendor/bin/sail up`` ou ``sail up`` si on a un alias
+- Installer les dépendances NPM: ``sail npm install``
+- Générer la clé avec ``sail artisan key:generate``
+
+> Note si sous windows avec wsl2, le chemin ``./vendor/bin/sail``, ne fonctionne pas, cela peut etre du à un probleme dans le dossier bin de vendor (les fichiers .bat ne sont pas générés), on peut alors utiliser le path complet pour accéder à sail : ``./vendor/laravel/sail/bin/sail``
+
 ### Problèmes avec ``sail npm run watch``
 Si npm run watch ne fonctionne qu'avec la première compilation, et ne recompile pas les fichiers à chaque changement on peut utiliser la commande ``sail npm run watch-poll`` qui observe régulièrement les changements au lieu de les observer en permananence, ce problème est lié à webpack qui peut ne pas détecter les changements dans certains environnements locaux
 
@@ -119,3 +141,4 @@ module.exports = {
 };
 ```
 - Ensuite on pourra avoir le hot reload avec ``sail npm run hot``
+- > Attention pour que le hotreload fonctionne il faut que l'url des fichiers scripts/styles soit celle du serveur hotreload (soit localhost:8080), si on utilise la fonction ``{{asset('assets/app.css')}}`` cela ne fonctionera pas, il faut utiliser ``{{mix('assets/app.css')}}``, ainsi si on est sur le serveur de hotreload laravel utilisera ``localhost:8080`` si on est sur la dev ou la prod il utilisera l'url correspondante
