@@ -267,3 +267,23 @@ Si notre accès à distance ne fonctionne pas, cela peut être du à un problèm
 	- puis on va dans ``users/username`` et on affiche les dossiers masqués, il y'aura un dossier ssh, on y trouve la clé publique (id_rsa.pub) et la privée (id_rsa.txt)
 	- on copie la clé publique (en l'ouvrant dans un éditeur puis en copiant), ensuite on va sur github, sur notre avatar, dans ``settings``
 	- puis sur ``ssh/gpg``, on clique sur ``new ssh key``, on choisit le titre et on colle la clé publique dans ``key``, on confirme le mot de passe et cela ajoute la nouvelle clé ssh au compte github
+
+### Push un repo local sur deux hébergeurs de dépot distant à la fois
+Si on souhaite push nos modifs sur deux dépôts en même temps on peux le faire en donnant à l'un des deux dépôts un nom différent, exemple pour github et gitlab:
+```
+git remote add origin-hub git@github.com:gitUser/testproject.git
+git remote add origin-lab git@gitlab.com:gitUser/testproject.git
+```
+- Ensuite pour push il suffit de mettre le nom du dépot et de la branche
+```
+git push origin-hub main
+git push origin-lab main
+```
+- Si on utilise juste ``git push`` la branche locale actuelle sera poussé sur dépôt par défaut (le premier créé)
+
+### Passer un dépôt distant de Https à ssh
+- Utiliser ``git remote -v`` pour lister les dépôts disponibles
+- Utiliser ``git remote set-url origin git@github.com:gitUser/testproject.git`` avec en paramètre le nom du dépôt et la nouvelle adresse vers laquelle pointer pour le ssh
+
+### Renommer un dépôt
+- ``git remote rename oldname newname``
