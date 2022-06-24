@@ -6,24 +6,22 @@ Pour utiliser webpack sur wordpress il faut:
 - Installer Node.js sur la machine, si ce n'est pas déjà fait
 - Créer l'architecture des dossiers pour les assets (les fichiers sont uniquement à titre d'exemple):
 ```
-/css
-    |__app.css
-/js
-    |__app.js
-/src
-    |__app.scss
-    |__app.js
-    |__script.js
+/assets
+    |___/scss
+        |__main.scss
+    |___/js
+        |__script.js
+/dist
 ```
-- Créer le fichier ``package.json``:
+- Créer le fichier ``package.json`` dans le thème:
 ```json
 {
   "name": "theme-name",
   "private": true,
-  "dependencies": { //Dépendances pour la prod (Babel pour la transcription entre les types de JS)
+  "dependencies": {
     "@babel/polyfill": "^7.11.5"
   },
-  "devDependencies": { //Dépendances pour la dev
+  "devDependencies": {
     "@babel/cli": "^7.11.6",
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
@@ -31,14 +29,14 @@ Pour utiliser webpack sur wordpress il faut:
     "babel-core": "^7.0.0-bridge.0",
     "browser-sync": "^2.26.12",
     "browser-sync-webpack-plugin": "^2.2.2",
-    "css-loader": "^4.3.0",
+    "css-loader": "^6.7.1",
     "file-loader": "^6.1.0",
-    "mini-css-extract-plugin": "^0.11.2",
-    "node-sass": "^4.14.1",
-    "sass-loader": "^10.0.2",
+    "mini-css-extract-plugin": "^2.6.1",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^13.0.0",
     "url-loader": "^4.1.0",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
   },
   "scripts": {
     "build": "webpack --mode production",
@@ -51,20 +49,21 @@ Pour utiliser webpack sur wordpress il faut:
   }
 }
 ```
-- Créer le fichier de config webpack: ``webpack.config.js``
+- Créer le fichier de config webpack dans le thème: ``webpack.config.js``
 ```js
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var path = require('path');
 
 //Variables correspondant au projet
-const jsPath= './js';
-const cssPath = './css';
-const outputPath = 'src';
-const localDomain = 'http://sitename.local';
+const jsPath= './assets/js';
+const scssPath = './assets/scss';
+const outputPath = 'dist';
+const localDomain = 'http://localhost';
 const entryPoints = {
-    //Ajouter la ou les sorties ou webpack devra compiler nos fichiers (app ou bundle par exemple)
-  'app': jsPath + '/app.js',
+    //Ajouter les points d'entrée depuis lesquels webpack devra compiler nos fichiers (app ou bundle par exemple)
+  'app': jsPath + '/script.js',
+  'style': scssPath + '/main.scss',
 };
 
 module.exports = {
@@ -133,12 +132,12 @@ import swiperfrom 'vendors/swiper.js';
     ```js
     import '../sass/app.scss';
     ```
-    - Ajouter un point de sortie en plus du ``'app'`` de js
+    - Ajouter un point d'entrée en plus du ``'app'`` de js
     ```js
     //dans webpack.config.js
     const entryPoints = {
     'app': jsPath + '/app.js',
-    'style': cssPath + '/style.sass',
+    'style': scssPath + '/app.scss',
     };
     ```
     - Si on ajoute ceci après avoir lancer ``npm install`` une erreur peut survenir indiquant qu'un fichier ou dossier n'existe pas, il faut alors exécuter: ``npm rebuild node-sass`` pour fixer l'erreur
@@ -150,3 +149,6 @@ import swiperfrom 'vendors/swiper.js';
 import swiper from 'swiper';
 ```
 
+- Si les dépendance du fichier package.json sont dépassés on peut utiliser ``npm outdated`` pour vérifier lesquelles ont une version plus récente
+
+- Note: il faut penser à ajouter un fichier gitignore dans le thème pour exclure ``/node_modules/`` ainsi que le dossier ``dist`` puisque celui ci sera rempli par webpack à chaque compilation

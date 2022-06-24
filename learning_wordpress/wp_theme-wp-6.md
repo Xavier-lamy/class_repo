@@ -8,6 +8,8 @@ L'objectif du theme.json est de respecter le modèle du ***Design system***, c'e
 
 > Il est aussi possible de mettre en place notre charte graphique avec la fonction ``add_theme_support`` dans ``functions.php``, mais le theme.json a pour objectif de remplacer cette fonction
 
+> Ressources: en plus de la doc, le site [fullsiteediting.com](https://fullsiteediting.com/lessons) propose des leçons sur le theme.json
+
 ### base du thème.json pour worpdress de base et le plugin gutenberg
 - On peut changer les largeurs d'affichage (container et taille max) pour les images notamment cela permet de mettre l'image à 100% de la taille du container (``contentSize``), de la faire dépasser légèrement du container (``wideSize``) ou de la mettre à 100% de la largeur de l'écran:
 ```json
@@ -131,7 +133,7 @@ body {
                     "name": "Blush light purple"
                 }
             ],
-            "link": false,
+            "link": false, //Détermine si on peut modifier la couleur des liens dans l'éditeur
             "palette": [], //Palette de couleur du thème
             "text": true, //Active ou non la possibilité de changer la couleur du texte dans l'éditeur
             "background": true, //Active ou non la possibilité de changer la couleur de l'arrière plan dans l'éditeur
@@ -161,14 +163,14 @@ body {
             "fontSizes": [ //Choisit les différentes taille de police du theme (celles de bases seront conservées à moins qu'on utilise le même slug)
                 {
                     "slug": "big",
-                    "size": 32,
+                    "size": "32",
                     "name": "Big"
                 },
                 {
                     "slug": "x-large",
-                    "size": 46,
+                    "size": "46",
                     "name": "Large"
-                },
+                }
             ], 
             "fontFamilies": [ //Choisit les polices du theme
                 {
@@ -198,6 +200,31 @@ body {
     }
 }
 ```
+- Pour les font sizes, on ne peut pas les désactiver mais on peut écraser les anciennes valeurs wordpress, les valeurs par défaut sont ``small``, ``medium``, ``large``, ``x-large``
+
+- On peut ajouter une fontFamily pour le titre du site en:
+    - définissant une fontFamily de base pour le site
+    - ajoutant une autre font family dans le ``block/site-title`` qui ne sera du coup utilisée que pour le nom du site:
+    ```json
+    {
+        "version": 2,
+        "settings": {
+            "blocks": {
+                "core/site-title": {
+                    "typography": {
+                        "fontFamilies": [
+                            {
+                                "fontFamily": "Helvetica Neue, Helvetica, Arial, sans-serif",
+                                "slug": "helvetica-arial",
+                                "name": "Helvetica or Arial"
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    }
+    ```
 
 - Pour les préréglages, dans ``settings``, certains génèrent des classes et propriété custom css, c'est le cas de:
     + des réglages ajoutés dans ``custom``:
@@ -427,5 +454,4 @@ p { /**core/paragraph ne suit pas la logique de base et correspond au sélecteur
 
 ### Utilisation du theme.json
 Il existe pour certains éditeurs de code, un schéma qui peut nous aider à écire notre thème.json, grâce à l'autocomplétion, la validation d'erreur,...:
-- Sous VSCode il faut utiliser ``$schema": "https://schemas.wp.org/trunk/theme.json"`` au début du thème.json
-
+- Sous VSCode il faut utiliser ``"$schema": "https://schemas.wp.org/trunk/theme.json"`` au début du thème.json
