@@ -76,3 +76,12 @@ body {
 ```
 
 - Aussi surprenant que cela puisse paraître, internet explorer ne supporte pas cette fonction
+
+## créer du texte qui s'adapte à la taille de l'écran
+
+On peut aussi utiliser les ``vw`` pour faire une police qui s'adapte à la taille de l'écran:
+```css
+body {
+    font-size: 5vw; /*Le texte fera 5% de la taille de l'écran (1vw = 1% de la largeur de l'écran*/
+}
+```
