@@ -68,3 +68,8 @@
 
 }
 ```
+
++ ``@media (prefer-reduced-motion: reduce)``:
+	- Si l'utilisateur a choisi de réduire la quantité d'animation dans ses paramètres, alors les propriétés css ajoutés après ``prefer-reduced-motion: reduce``, s'appliqueront
+	- cela permet notamment de désactiver automatiquement les animations, on peut par exemple mettre nos animations uniquement dans ``prefer-reduced-motion: no-preference``, ainsi seul ceux qui n'ont pas choisi de désactiver les animations pourront les voir, ce qui est une bonne chose pour l'accessibilité (notamment des personnes ayant des troubles du mouvement vestibulaire) 
+	- Les valeurs sont ``reduce`` ou ``no-preference``
