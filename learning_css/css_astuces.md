@@ -38,3 +38,41 @@ html {
 }
 
 ```
+
+### ``clamp()``
+- ``clamp(MinValue, Value, MaxValue)``: renvoie:
+    - La valeur du milieu si elle est comprise entre ``min`` et ``max``
+    - la valeur minimale, si ``val < min``
+    - la valeur maximale, si ``val > max``
+
+- ça peut notamment servir quand on veut faire du responsive, avec les ``rem``, imaginons qu'on aie la situation suivante:
+```css 
+html {
+    font-size: 100%; /*Récupère la taille par défaut du navigateur, en général = 16px*/
+
+    /*Note: astuce pour que les rem valent 10px (facilitant le calcul)*/
+    font-size: 62.5%;
+}
+
+h1 {
+    font-size: 6rem;
+
+}
+
+/*Notre titre est trop grand en mobile, il faudra le réduire, une manière de faire est donc de réduire la taille dans le html, cela modifiera donc la valeur du root em, et tous les titres et éléments basés sur le rem seront automatiquement réajusté:*/
+@media(max-width:992px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+/*Le problème c'est que si le body a une font-size de base de 1rem , il sera aussi réduit à 12px, ce qui pourrait être trop petit, on pourrait alors déterminer de manière fixe la taille du body en px pour les mobiles, mais on peut aussi utiliser clamp*/
+
+body {
+    font-size: clamp(14px, 1rem, 16px);
+    /*Ainsi dans ce cas sur desktop puisqu'un rem vaut 16px le body sera de 1rem, mais en mobile puisqu'un 1rem vaut 12px, alors la font-size sera de 14px*/
+}
+
+```
+
+- Aussi surprenant que cela puisse paraître, internet explorer ne supporte pas cette fonction

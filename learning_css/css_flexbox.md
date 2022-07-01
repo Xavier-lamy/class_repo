@@ -23,10 +23,21 @@
 	- ``flex-end``: alignés à la fin
 	- ``center``: alignés au centre
 	- ``baseline``:`alignés sur la ligne de base du texte
-- ``align-content:``: permet d'aligner nos elements quand ils sont sur plusieurs lignes et colonnes( n'a aucun effet s'il n'y a qu'une ligne)
++ ``align-content:``: permet d'aligner nos elements quand ils sont sur plusieurs lignes et colonnes( n'a aucun effet s'il n'y a qu'une ligne)
 	- ``flex-start``: au début
 	- ``flex-end``: à la fin
 	- ``center``: au centre
 	- ``space-between``: séparés avec des espaces
 	- ``space-around``: séparés au milieu et sur les cotés par des espaces
 	- ``stretch`` (défaut) : s'étire dans tout l'espace
++ ``flex-grow:``: facteur d'expansion d'un élément flexible, c'est à dire la place qu'il peut prendre dans un container flex (ex: si flex-grow:2, il pourra prendre le double des autres éléments)
+	- la valeur attendue est un nombre
+	- par défaut = 0
++ ``flex-shrink:``: facteur de rétrécissement, c'est à dire de combien l'élément peut se réduire par rapport aux autres éléments
+	- valeur attendue est un nombre
+	- par défaut = 1 (fera juste en sorte de tenir dans la boite avec les autres éléments)
++ ``flex-basis:``: taille de l'élément flexible, si n'est pas égal à ``auto``, prend la priorité sur width ou height, exemple flex-basis: 50%, l'élement prendra la moitié du container
+	- valeurs: n'importe quelle valeur valide pour width/height
++ ``flex:``: super propriété combinant dans l'ordre: ``flex-grow``, ``flex-shrink``, ``flex-basis``:
+	- valeur par défaut: ``initial`` = ``0 1 auto``
+	- autres valeurs possibles: comme pour les propriétés de bases ou ``none | 0 0 auto``, ``auto | 1 1 auto``
