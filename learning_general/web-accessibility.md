@@ -101,3 +101,66 @@ Globalement les mêmes que pour un site classique, il s'agit avant tout d'élém
 ## Taux de conformité au RGAA
 - Audit réalisé sur un échantillon de pages du site, il consiste à vérifier que le site passe les 106 critères du référentiel RGAA
 - Les sites concernés par l'obligation d'accessibilité numérique doivent publier une déclaration d'accessibilité, on peut notamment afficher le taux de conformité au RGAA en bas de page
+
+## Bases du RGAA
+- [Site du gouvernement](https://www.numerique.gouv.fr/publications/rgaa-accessibilite/)
+- Le RGAA est le Règlement Général d'Amélioration de l'Accessibilité
+- il définit un ensemble de règles et d'éléments à mettre en place pour que le service (site, appli, mobilier urbain numérique,...) soit accessible au plus grand nombre
+- Il doit obligatoirement être respecté par:
+    - les entreprises publics ou affiliés (privé mais qui travaille pour le secteur publique)
+    - les entreprises de plus de 250millions d'euros de CA annuel (donc les très grosses entreprises)
+- Toutes les autres entreprises peuvent bien entendu tenter le plus possible de le respecter, mais n'y sont pas obligé
+- Il existe quelques exceptions notamment:
+    - pénibilité de mise en oeuvre, si la mise en place des mesures nécessaire est trop complexe par rapport à la structure de l'entreprise ou que le bénéfice apporté n'est pas assez grand par rapport à cette difficulté de mise en oeuvre, il peut y avoir dérogation
+    - certains types de contenu mis en lignes avant certaines dates (ex: contenus audio mis en lignes avant septembre 2020), les éléments d'archive de site qui n'ont pas été mis à jour après septembre 2019 et qui ne sont pas nécessaire pour des démarches administrative (par exemple un article de 2018 archivé et non mis à jour depuis), ...
+
+### Cadre du RGAA
+Quand on souhaite réaliser un audit RGAA, il y a certaines règles:
+- Doit être fiable: généralement réalisé par un prestataire externe si possible, ou plusieurs audit croisés
+- Doit être représentatif: donc sur assez de pages du site et notamment:
+    - Page accueil
+    - Page contact
+    - Page mentions légales
+    - Page de déclaration d'accessibilité
+    - Page plan du site
+    - Page d'aide
+    - Page d'authentification
+    - les pages contenant un processus (exemple formulaires)
+    - au moins un exemple de chaque type de page (exemple ça ne sert à rien de faire un audit sur tous les articles de blog d'un site, on peut le faire que sur un article)
+    - document téléchargeable si présent (exemple un PDF)
+- Dans le cas ou un critère peut etre soumis à dérogation pour charge disproportionné, si celui ci (exemple tableau ou graphique) comporte aussi une alternative en texte alors il pourra ne pas passer les critères d'accessibilité
+- Le résultat d'un test de conformité est un taux qui prend en compte la conformité moyenne des pages et éléments du site
+
+### La déclaration
+Elle doit comporter:
+- l'état de conformité:
+    - Total si tout est respecté
+    - partielle si au moins 50% des critères
+    - non-conforme si moins de 50% ou pas d'audit réalisé
+- Le signalement des contenus non accessible, ainsi que les solutions et les raisons de l'inaccessibilité
+- Un mécanisme de contact pour pouvoir signaler un élément inaccessible
+- La mention de la possibilité pour une personne de saisir le défenseur des droits en cas de manquement non résolu
+
+- la page d'acceuil doit aussi comporter les mentions d'accessibilité:
+    - `` Accessibilité : totalement conforme`` si tous les critères de contrôle du RGAA sont respectés
+    - `` Accessibilité : partiellement conforme`` si au moins 50 % des critères de contrôle du RGAA sont respectés
+    - `` Accessibilité : non conforme`` s’il n’existe aucun résultat d’audit en cours de validité permettant de mesurer le respect des critères ou si moins de 50 % des critères de contrôle du RGAA sont respectés
+
+### Les critères
+La méthode du RGAA permet de valider la conformité d'une page web avec les 50 critères de la norme internationale ***WCAG 2.1*** (***Web Content Accessability Guidelines***)
+- Elle contient elle même 106 critères (en 2022) répartis en plusieurs catégories (certains critères sont rassemblés en 1 dans ce résumé):
+
+#### Images
+- Les images porteuses d'information (donc pas uniquement pour décorer) doivent avoir une alternative textuelle pertinente, et si nécessaire une description détaillée et pertinente
+- Les images de décoration sont ignorés par les technologies d'assistance
+
+#### Cadres
+- Les cadres ont un titre de cadre, qui doit être pertinent
+
+#### Couleurs
+- L'information ne doit pas etre donné uniquement par la couleur
+- Le contraste entre le texte et le background est suffisant
+- Les couleurs sont assez contrastés
+
+#### Multimédia
+//////////////A continuer//////////
