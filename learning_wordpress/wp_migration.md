@@ -16,6 +16,7 @@ Quand on souhaite migrer notre site sur un serveur (ex: passer du dev à la prod
     - Vérifier les réglages d'écriture et de lecture (il ne devrait normalement pas y avaoir vraiment de difference avec la dev)
     - Créer les éventuels comptes pour les participants (autres admin, auteurs,...)
     - Ajouter le Re-captcha si il y a des formulaires
+    - Minifier le css et le js
     - Vérifier les réglages SEO, notamment dans yoast:
         * Désactiver les archives de pages auteurs (sauf si nécessaire dans le projet)
         * Désactiver les archives par date (sauf si nécessaire dans le projet)
