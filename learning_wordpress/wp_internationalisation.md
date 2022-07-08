@@ -4,10 +4,25 @@
 
 + Le multilangue permet de proposer plusieurs langues au visiteur de son site
 
-## Internationaliser un thème
++ Wordpress utilise la bibliothèque php ``gettext`` pour les traductions, avec des focntions propres à wordpress
+
+## Internationaliser un thème (le système est similaire pour un plugin)
 + Déclarer le TextDomain:
-    - ``load_theme_textdomain('textdomain_name', get_template_directory() . '/languages');``
+    - ``load_theme_textdomain('textdomain_name', get_template_directory() . '/languages');`` ou ``load__child_theme_textdomain('textdomain_name', get_template_directory() . '/languages');``, cela permet de charger les fichiers de traduction
     - en 1er param, l'id unique pour ce thème, en 2eme le chemin où trouver les fichiers de traduction
++ Le ***text domain*** doit correspondre au slug du nom du thème -donc un thème appelé ``Thème custom`` doit avoir pour text-domain: ``theme-custom``, pour qu'il soit accessible facilement sur ``translate.wordpress.org``
++ Le text-domain est utilisé à 3 endroits différents:
+    - Dans l'en-tête du fichier style.css (domain path n'est nécessaire que si on met nos traductions dans un dossier différent du ``languages`` de base):
+    ```css
+        /*
+        * Theme Name: My Theme
+        * Author: Theme Author
+        * Text Domain: my-theme
+        * Domain Path: /languages
+        */ 
+    ```
+    - En tant que paramètre des fonctions de traduction (``__('Translate that, 'text-domain')``,...)
+    - Dans la fonction ``load_theme_textdomain()``
 + Les fonctions de traduction (commencent toutes par ``_``):
     - ``_e('original-string', 'textdomain_name')`` : fait référence à **echo** permet de traduire et d'afficher
     - ``__('original-string', 'textdomain_name')`` : permet de traduire sans afficher
