@@ -147,20 +147,4 @@ Elle doit comporter:
     - `` Accessibilité : non conforme`` s’il n’existe aucun résultat d’audit en cours de validité permettant de mesurer le respect des critères ou si moins de 50 % des critères de contrôle du RGAA sont respectés
 
 ### Les critères
-La méthode du RGAA permet de valider la conformité d'une page web avec les 50 critères de la norme internationale ***WCAG 2.1*** (***Web Content Accessability Guidelines***)
-- Elle contient elle même 106 critères (en 2022) répartis en plusieurs catégories (certains critères sont rassemblés en 1 dans ce résumé):
-
-#### Images
-- Les images porteuses d'information (donc pas uniquement pour décorer) doivent avoir une alternative textuelle pertinente, et si nécessaire une description détaillée et pertinente
-- Les images de décoration sont ignorés par les technologies d'assistance
-
-#### Cadres
-- Les cadres ont un titre de cadre, qui doit être pertinent
-
-#### Couleurs
-- L'information ne doit pas etre donné uniquement par la couleur
-- Le contraste entre le texte et le background est suffisant
-- Les couleurs sont assez contrastés
-
-#### Multimédia
-//////////////A continuer//////////
+La méthode du RGAA permet de valider la conformité d'une page web avec les 50 critères de la norme internationale ***WCAG 2.1*** (***Web Content Accessability Guidelines***), elle contient 106 critères (en 2022) répartis en plusieurs catégories. 
