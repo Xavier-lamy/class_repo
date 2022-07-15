@@ -4,11 +4,10 @@ Pour réaliser un affichage différent en fonction de si on est sur mobile ou de
 
 ## Mobile_Detect
 - Un fichier php qu'on peut télécharger sur le [github du projet](https://github.com/serbanghita/Mobile-Detect) (ou copier coller),
-- on l'inclut dans nos fonctions (``require_once "libs/Mobile_Detect.php"``) 
+- on l'inclut dans nos fonctions (``require_once "libs/mobile_detect.php"``), note il est mieux de mettre le nom du fichier entièrement en minuscule, même si dans la doc il a des majuscules, car sinon ça peut poser problème sur certaines configs 
 - on peut alors faire des conditions pour vérifier sur quelle type d'appareils on se trouve:
 ```php
 // Include and instantiate the class.
-require_once 'Mobile_Detect.php';
 $detect = new Mobile_Detect;
  
 // Any mobile device (phones or tablets).
