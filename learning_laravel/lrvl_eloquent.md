@@ -201,3 +201,8 @@ Si on souhaite récupérer les données (exemple nos articles en bdd) pour les e
 ```php
 $post = Post::whereIn('id', $ids)->get();
 ```
+
+## Chercher des éléments dont l'entrée match une regex
+```php
+$musics->whereRaw("title REGEXP '^Like|Love'"); //Cette méthode va chercher les musiques dont le titre commence par like ou love
+```
