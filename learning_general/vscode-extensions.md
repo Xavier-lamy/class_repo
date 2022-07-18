@@ -26,3 +26,4 @@
 - Tailwind CSS IntelliSense
 - Python intellisense + Pylance (si on fait du python)
 - Vetur (si on utilise Vue.js)
+- Remote Development extension pack. permet d'avoir des extensions qui permettent d'ouvrir des dossiers dans des containers différents de notre système

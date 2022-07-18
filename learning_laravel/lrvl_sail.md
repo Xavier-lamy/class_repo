@@ -41,6 +41,7 @@ Si on a déjà un projet installé avec composer et qu'on souhaite ajouter et ut
 #### Lancer les containers
 - exécuter ``./vendor/bin/sail up`` ou juste ``sail up`` pour lancer les différents container définit dans le ``docker-compose.yml``
 - ou ``sail up -d``, pour excuter en mode détaché, c'est à dire en arrière-plan
+- quand le container est lancé on peut alors aller sur l'adresse http://localhost pour avoir notre site
 
 #### Arrêter les containers
 - ``CTRL C`` pour arrêter l'exécution des containers si on est pas en mode détaché
