@@ -310,7 +310,9 @@ export default defineConfig({
     ],
 });
 ```
-15. Quand on utilise wsl2 avec un système windows, c'est le bazarre, il ne prend pas en compte les changements
+15. Quand on utilise wsl2 avec un système windows (not pour sail), il y a un bug connu qui fait que notre distro linux, ne peut pas observer les changements, pour remédier à cela, il faut déplacer notre dossier de projet à la racine de notre distro:
+    - On utilise ``cp -R /mnt/c/<folder_name> /home`` éventuellement exécuter en administrateur: ``sudo cp -R /mnt/c/<folder_name> /home``
+    - Puis quand on veut exécuter des commandes et qu'on nous indique un problème de droits d'accès: ``sudo chown –R <username> <folder_name>``
 
 Tests sur mon projet starter-pack, changement d'une couleur dans le css, les temps sont très long car docker sur pc pas tous jeune, 3 tests par changement: 
     - avec webpack: 11825ms + 6000ms + 5451ms = en moyenne 7758ms
