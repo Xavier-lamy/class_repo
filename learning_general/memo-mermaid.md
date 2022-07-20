@@ -109,6 +109,24 @@ erDiagram
     CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
 ```
 
+Plus d'explications: 
++ ces diagrammes sont basés sur la notification ``crow's foot`` qui permettent de montrer des relation oneToMany ou manyToMany optionnels ou obligatoires:
+    - L'anneau ``o`` représente un 0
+    - Le trait ``|`` représente le 1
+    - et le ***crow's feet*** ``{ ou }`` repésente **plusieurs** ou une **infinité**
++ Ensuite on les utilise par paire, l'élement vers l'extérieur représente la valeur maximum, celui vers l'intérieur représente le minimum, on peut donc avoir:
+    - ``o|``: minimum 0, maximum 1 (relation optionnel)
+    - ``||``: minimum 1, maximum 1 (relation obligatoire)
+    - ``o{``: minimum 0, maximum plusieurs/infini (relation optionnel)
+    - ``|{``: minimum 1, maximum plusieurs/infini (relation obligatoire)
++ Ensuite mermaid ajoute soit ``--`` rendu par un trait continu si l'élément est défini par sa relation, ou ``..`` rendu par un trait pointillé s'il ne l'est pas (exemple: dans le cas d'une table voiture, une table personne, et une table conducteur, le conducteur est défini par le fait qu'il est une personne et qu'il conduit une voiture, c'est donc une relation qui le définit (``--``), il ne peut exister si une des deux tables n'existent pas, en revanche la relation entre personne et voiture ne les définit pas (``..``) , une voiture peut exister sans une personne et la personne peut exister sans la voiture)
+
+
+ring and dash → minimum zero, maximum one (optional)
+dash and dash → minimum one, maximum one (mandatory)
+ring and crow's foot → minimum zero, maximum many (optional)
+dash and crow's foot → minimum one, maximum many (mandatory)
+
 #### [State Diagram](https://mermaid-js.github.io/mermaid/#/stateDiagram)
 ```mermaid
 stateDiagram-v2
